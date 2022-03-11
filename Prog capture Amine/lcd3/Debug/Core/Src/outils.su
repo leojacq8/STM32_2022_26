@@ -1,0 +1,4 @@
+outils.c:10:6:uart_begin	8	static
+outils.c:14:6:print	72	static
+outils.c:101:6:print_char	24	static
+outils.c:110:6:print_str	24	static

@@ -1,0 +1,4 @@
+TMP_i2c.c:12:6:TMP_Receive	24	static
+TMP_i2c.c:20:6:TMP_init	8	static
+TMP_i2c.c:24:6:TMP_Transmit	24	static
+TMP_i2c.c:29:6:Temp_read	32	static

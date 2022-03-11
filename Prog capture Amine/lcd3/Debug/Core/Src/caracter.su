@@ -1,0 +1,3 @@
+caracter.c:8:6:reverse	32	static
+caracter.c:20:5:intToStr	32	static
+caracter.c:37:6:ftoat	48	static
