@@ -1,0 +1,8 @@
+MY_DHT22.c:35:6:DHT22_Init	24	static
+MY_DHT22.c:51:6:ONE_WIRE_PinMode	40	static
+MY_DHT22.c:73:6:ONE_WIRE_Pin_Write	16	static
+MY_DHT22.c:78:6:ONE_WIRE_Pin_Read	8	static
+MY_DHT22.c:85:6:delay_us	16	static
+MY_DHT22.c:92:6:DHT22_StartAcquisition	8	static
+MY_DHT22.c:108:6:DHT22_ReadRaw	24	static
+MY_DHT22.c:148:6:DHT22_GetTemp_Humidity	32	static
