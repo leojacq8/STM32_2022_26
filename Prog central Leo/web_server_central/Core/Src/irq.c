@@ -8,7 +8,7 @@
 #include "irq.h"
 
 static uint8_t RX_UART1_irq	= 0;
-static uint8_t RX_UART4_irq	= 0;
+static uint8_t RX_DMA_irq	= 0;
 
 /*uart section*/
 void set_usar1_irq(uint8_t value)
@@ -43,21 +43,21 @@ uint8_t get_usar1_irq()
 	return ret;
 }
 /*acc section*/
-void set_usar4_irq(uint8_t value)
+void set_dma_irq(uint8_t value)
 {
     uint32_t prim;
     prim = __get_PRIMASK();
 
     __disable_irq();
 
-	RX_UART4_irq	= value;
+	RX_DMA_irq	= value;
 
     if (!prim) {
           __enable_irq();
     }
 }
 
-uint8_t get_usar4_irq()
+uint8_t get_dma_irq()
 {
 	uint8_t ret = 0;
     uint32_t prim;
@@ -65,7 +65,7 @@ uint8_t get_usar4_irq()
     prim = __get_PRIMASK();
     __disable_irq();
 
-	ret	= RX_UART4_irq;
+	ret	= RX_DMA_irq;
 
 
     if (!prim) {
@@ -94,14 +94,14 @@ void USART1_SendIT(UART_HandleTypeDef *huart)
     rx_cb_USART_1();
 }
 
-void USART1_Enable_IT(UART_HandleTypeDef *huart)
+void USART_Enable_IT(UART_HandleTypeDef *huart)
 {
     //Reactivate interrupt after callback
     __HAL_LOCK(huart);
     /* Set Reception type to Standard reception */
-    huart1.ReceptionType = HAL_UART_RECEPTION_STANDARD;
-    huart1.ErrorCode = HAL_UART_ERROR_NONE;
-    huart1.RxState = HAL_UART_STATE_BUSY_RX;
+    huart->ReceptionType = HAL_UART_RECEPTION_STANDARD;
+    huart->ErrorCode = HAL_UART_ERROR_NONE;
+    huart->RxState = HAL_UART_STATE_BUSY_RX;
     /* Process Unlocked */
     __HAL_UNLOCK(huart);
 

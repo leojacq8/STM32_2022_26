@@ -74,8 +74,10 @@ void SystemClock_Config(void);
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
- HAL_Delay(1);
+    set_dma_irq(1);
+    HAL_UART_Receive_DMA(&huart4, DMA_buff, DMA_SIZE);
 }
+
 
 //CallBack function for IRQ
 void rx_cb_USART_1()
@@ -85,7 +87,7 @@ void rx_cb_USART_1()
 
 void rx_cb_USART_4()
 {
-    set_usar4_irq(1);
+    set_dma_irq(1);
 }
 
 /* USER CODE END PFP */
@@ -102,12 +104,16 @@ void rx_cb_USART_4()
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	  uint8_t send_buffer[100] ="";
-	  uint8_t temp[128] = "";
-	  uint8_t data_ok = 0;
-	  uint8_t get_try = 0;
-	  uint32_t	wd_timer			= 0;
-	  uint8_t temp_string[128] = "";
+	  char *strToken					= NULL;
+	  uint8_t data_extract_temp[100] 	= "";
+	  uint8_t temp_string[128] 			= "";
+	  uint8_t send_buffer[100] 			= "";
+	  uint8_t temp[128] 				= "";
+	  uint8_t extract_data 				= 0;
+	  uint8_t data_ok 					= 0;
+	  uint8_t get_try 					= 0;
+	  uint8_t lenght 					= 0;
+	  uint32_t	wd_timer				= 0;
 
   /* USER CODE END 1 */
 
@@ -143,12 +149,12 @@ int main(void)
   DHT22_Init(&DHT22_1, DHT22_PORT, DHT22_PIN);
 
   /*Activate DMA on UART2*/
-  HAL_UART_Receive_DMA(&huart4, DMA_buff, 12);
+  HAL_UART_Receive_DMA(&huart4, DMA_buff, DMA_SIZE);
 
   //HAL_UART_Receive_IT(&huart4, DMA_buff, 12);
 
   /*Enable IRQ on UART1*/
-  USART1_Enable_IT(&huart1);
+  USART_Enable_IT(&huart1);
 
   /*First sequence of LCD*/
   lcd_init(&hi2c1, &rgbData);
@@ -176,12 +182,12 @@ int main(void)
 
 	        	 // memset(send_buffer,0, sizeof(send_buffer));
 	        	  //HAL_UART_Receive_DMA (&huart1, DMA_buff, 12);
-	        	 /* HAL_UART_Receive(&huart1, DMA_buff, 10, 5000);
-	        	  HAL_Delay(2000);*/
+	        	 /* HAL_UART_Receive(&huart1, DMA_buff, 10, 5000);*/
+	        	  //HAL_Delay(2000);
 
 	        	  //HAL_UART_Receive(&huart2,USART2_BUFFER, strlen((char *)USART2_BUFFER), 5000);
 
-		    	  fsm_state = ST_IDLE;
+		    	  fsm_state = ST_GET_DATA;
 	        	  break;
 
 	          /***********************************/
@@ -239,7 +245,7 @@ int main(void)
 			    	   	  }
 		    	   }
 
-			      fsm_state = ST_IDLE;
+			      fsm_state = ST_CHECK_DMA;
 		    	 // fsm_state = ST_CHECK_DMA;
 		          break;
 
@@ -248,15 +254,9 @@ int main(void)
 			 /***********************************/
 			 case ST_CHECK_DMA:
 
-				 char *strToken	= NULL;
-				 uint8_t data_extract_temp[100];
-				 uint8_t extract_data = 0;
-				 uint8_t lenght = 0;
-				 uint8_t i = 0;
-
-				 if(get_usar4_irq() == 1)
+				 if(get_dma_irq() == 1)
 				 {
-
+					    set_dma_irq(0);
 						memcpy(temp_string,DMA_buff,sizeof(DMA_buff));
 
 						strToken = strtok((char*) temp_string,"$");
@@ -273,10 +273,13 @@ int main(void)
 							}
 							if (lenght == DATA_SIZE)
 							{
-								data_extract_temp[0] = '$';
-								strcat(data_extract_temp,"$");
-								strcat(data_extract_temp,strToken);
-								memcpy(&data_extract_temp[extract_data*(DMA_MAX_DATA-2)],"\0\0",strlen("\0\0"));
+								strcat((char *)data_extract_temp,",$");
+
+					        	memset(temp,0, sizeof(temp));
+					        	memcpy(temp,strToken,lenght);
+					        	temp[DATA_SIZE-1] = 0;
+					        	temp[DATA_SIZE-2] = 0;
+								strcat((char *)data_extract_temp,(char *)temp);
 
 								strToken = strtok( NULL, "$" );
 								extract_data++;
@@ -304,11 +307,11 @@ int main(void)
 			 /***********************************/
 			 case ST_SEND_DATA:
 
-	        	 memset(send_buffer,0, sizeof(send_buffer));
+				 memset(send_buffer,0, sizeof(send_buffer));
 	        	 strcat((char *)send_buffer,"$");
 
 	        	 memset(temp,0, sizeof(temp));
-	        	 sprintf((char *)temp,"&i=%c", device_ID);
+	        	 sprintf((char *)temp,"&i=%s", device_ID);
 	        	 strcat((char *)send_buffer,(char *)temp);
 
 	        	 memset(temp,0, sizeof(temp));

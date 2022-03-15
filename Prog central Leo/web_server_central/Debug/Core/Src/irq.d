@@ -27,7 +27,8 @@ Core/Src/irq.o: ../Core/Src/irq.c ../Core/Inc/irq.h ../Core/Inc/main.h \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim_ex.h \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h \
- ../Core/Inc/usart.h
+ ../Core/Inc/usart.h \
+ ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h
 
 ../Core/Inc/irq.h:
 
@@ -90,3 +91,5 @@ Core/Src/irq.o: ../Core/Src/irq.c ../Core/Inc/irq.h ../Core/Inc/main.h \
 ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h:
 
 ../Core/Inc/usart.h:
+
+../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_def.h:

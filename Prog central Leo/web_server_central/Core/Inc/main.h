@@ -37,7 +37,8 @@ extern "C" {
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
 #define DMA_SIZE 100
-#define DATA_SIZE 25 //$&i=001&t=20.50&h=60.41\r\n
+#define DATA_SIZE 24 //&i=001&t=20.50&h=60.41\r\n  without the $
+#define RAW_DATA_SIZE 25
 #define DMA_MAX_DATA DMA_SIZE/DATA_SIZE //$&i=001&t=20.50&h=60.41\r\n
 #define USART1_BUFFER_SIZE 256
 

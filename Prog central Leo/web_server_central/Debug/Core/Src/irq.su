@@ -1,6 +1,6 @@
 irq.c:14:6:set_usar1_irq	24	static,ignoring_inline_asm
 irq.c:28:9:get_usar1_irq	24	static,ignoring_inline_asm
-irq.c:46:6:set_usar4_irq	24	static,ignoring_inline_asm
-irq.c:60:9:get_usar4_irq	24	static,ignoring_inline_asm
+irq.c:46:6:set_dma_irq	24	static,ignoring_inline_asm
+irq.c:60:9:get_dma_irq	24	static,ignoring_inline_asm
 irq.c:78:6:USART1_SendIT	16	static
-irq.c:97:6:USART1_Enable_IT	16	static
+irq.c:97:6:USART_Enable_IT	16	static
