@@ -1,0 +1,7 @@
+DHT22.c:11:6:DHT22_Init	0	static
+DHT22.c:19:6:DHT22_Set_Output	32	static
+DHT22.c:30:6:DHT22_Set_Input	32	static
+DHT22.c:40:9:DHT22_Start	8	static
+DHT22.c:54:9:DHT22_Check_Response	16	static
+DHT22.c:89:9:DHT22_Read_raw	24	static
+DHT22.c:131:9:DHT22_Read_Temp_Hum	32	static

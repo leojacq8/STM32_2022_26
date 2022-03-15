@@ -36,6 +36,10 @@ extern "C" {
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
+#define DMA_SIZE 100
+#define DATA_SIZE 25 //$&i=001&t=20.50&h=60.41\r\n
+#define DMA_MAX_DATA DMA_SIZE/DATA_SIZE //$&i=001&t=20.50&h=60.41\r\n
+#define USART1_BUFFER_SIZE 256
 
 enum STATE
 {
@@ -74,10 +78,6 @@ void rx_cb_USART_2();
 /* Private defines -----------------------------------------------------------*/
 #define B1_Pin GPIO_PIN_13
 #define B1_GPIO_Port GPIOC
-#define USART_TX_Pin GPIO_PIN_2
-#define USART_TX_GPIO_Port GPIOA
-#define USART_RX_Pin GPIO_PIN_3
-#define USART_RX_GPIO_Port GPIOA
 #define LD2_Pin GPIO_PIN_5
 #define LD2_GPIO_Port GPIOA
 #define TMS_Pin GPIO_PIN_13

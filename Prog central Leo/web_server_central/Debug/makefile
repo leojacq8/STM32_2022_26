@@ -60,8 +60,8 @@ all: main-build
 main-build: web_server_central.elf secondary-outputs
 
 # Tool invocations
-web_server_central.elf: $(OBJS) $(USER_OBJS) E:\ECOLE\MASTER\Realisation\ systeme\STM32\Programme\STM32_2022_26\Prog\ central\web_server_central\STM32L152RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "web_server_central.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"E:\ECOLE\MASTER\Realisation systeme\STM32\Programme\STM32_2022_26\Prog central\web_server_central\STM32L152RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="web_server_central.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+web_server_central.elf: $(OBJS) $(USER_OBJS) G:\ECOLE\MASTER\Realisation\ systeme\STM32\Github\STM32_2022_26\Prog\ central\ Leo\web_server_central\STM32L152RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "web_server_central.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"G:\ECOLE\MASTER\Realisation systeme\STM32\Github\STM32_2022_26\Prog central Leo\web_server_central\STM32L152RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="web_server_central.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

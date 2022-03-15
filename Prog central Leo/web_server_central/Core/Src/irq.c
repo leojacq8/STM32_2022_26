@@ -7,6 +7,9 @@
 
 #include "irq.h"
 
+static uint8_t RX_UART1_irq	= 0;
+static uint8_t RX_UART4_irq	= 0;
+
 /*uart section*/
 void set_usar1_irq(uint8_t value)
 {
@@ -40,21 +43,21 @@ uint8_t get_usar1_irq()
 	return ret;
 }
 /*acc section*/
-void set_usar2_irq(uint8_t value)
+void set_usar4_irq(uint8_t value)
 {
     uint32_t prim;
     prim = __get_PRIMASK();
 
     __disable_irq();
 
-	RX_UART2_irq	= value;
+	RX_UART4_irq	= value;
 
     if (!prim) {
           __enable_irq();
     }
 }
 
-uint8_t get_usar2_irq()
+uint8_t get_usar4_irq()
 {
 	uint8_t ret = 0;
     uint32_t prim;
@@ -62,7 +65,7 @@ uint8_t get_usar2_irq()
     prim = __get_PRIMASK();
     __disable_irq();
 
-	ret	= RX_UART2_irq;
+	ret	= RX_UART4_irq;
 
 
     if (!prim) {

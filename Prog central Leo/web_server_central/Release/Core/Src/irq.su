@@ -1,0 +1,6 @@
+irq.c:11:6:set_usar1_irq	0	static,ignoring_inline_asm
+irq.c:25:9:get_usar1_irq	0	static,ignoring_inline_asm
+irq.c:43:6:set_usar4_irq	0	static,ignoring_inline_asm
+irq.c:57:9:get_usar4_irq	0	static,ignoring_inline_asm
+irq.c:75:6:USART1_SendIT	0	static
+irq.c:94:6:USART1_Enable_IT	0	static

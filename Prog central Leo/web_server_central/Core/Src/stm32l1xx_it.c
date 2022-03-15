@@ -20,9 +20,9 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32l1xx_it.h"
-#include "irq.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "irq.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -56,9 +56,9 @@
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
-extern DMA_HandleTypeDef hdma_usart2_rx;
+extern DMA_HandleTypeDef hdma_uart4_rx;
+extern UART_HandleTypeDef huart4;
 extern UART_HandleTypeDef huart1;
-extern UART_HandleTypeDef huart2;
 /* USER CODE BEGIN EV */
 
 /* USER CODE END EV */
@@ -202,20 +202,6 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
-  * @brief This function handles DMA1 channel6 global interrupt.
-  */
-void DMA1_Channel6_IRQHandler(void)
-{
-  /* USER CODE BEGIN DMA1_Channel6_IRQn 0 */
-
-  /* USER CODE END DMA1_Channel6_IRQn 0 */
-  HAL_DMA_IRQHandler(&hdma_usart2_rx);
-  /* USER CODE BEGIN DMA1_Channel6_IRQn 1 */
-
-  /* USER CODE END DMA1_Channel6_IRQn 1 */
-}
-
-/**
   * @brief This function handles USART1 global interrupt.
   */
 void USART1_IRQHandler(void)
@@ -273,24 +259,38 @@ void USART1_IRQHandler(void)
 
 	  USART1_Enable_IT(&huart1);
   /* USER CODE END USART1_IRQn 0 */
- // HAL_UART_IRQHandler(&huart1);
+  //HAL_UART_IRQHandler(&huart1);
   /* USER CODE BEGIN USART1_IRQn 1 */
 
   /* USER CODE END USART1_IRQn 1 */
 }
 
 /**
-  * @brief This function handles USART2 global interrupt.
+  * @brief This function handles UART4 global interrupt.
   */
-void USART2_IRQHandler(void)
+void UART4_IRQHandler(void)
 {
-  /* USER CODE BEGIN USART2_IRQn 0 */
+  /* USER CODE BEGIN UART4_IRQn 0 */
 
-  /* USER CODE END USART2_IRQn 0 */
-  HAL_UART_IRQHandler(&huart2);
-  /* USER CODE BEGIN USART2_IRQn 1 */
+  /* USER CODE END UART4_IRQn 0 */
+  HAL_UART_IRQHandler(&huart4);
+  /* USER CODE BEGIN UART4_IRQn 1 */
 
-  /* USER CODE END USART2_IRQn 1 */
+  /* USER CODE END UART4_IRQn 1 */
+}
+
+/**
+  * @brief This function handles DMA2 channel3 global interrupt.
+  */
+void DMA2_Channel3_IRQHandler(void)
+{
+  /* USER CODE BEGIN DMA2_Channel3_IRQn 0 */
+
+  /* USER CODE END DMA2_Channel3_IRQn 0 */
+  HAL_DMA_IRQHandler(&hdma_uart4_rx);
+  /* USER CODE BEGIN DMA2_Channel3_IRQn 1 */
+
+  /* USER CODE END DMA2_Channel3_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */
