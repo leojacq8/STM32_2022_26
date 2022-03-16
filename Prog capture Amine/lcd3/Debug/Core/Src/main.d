@@ -26,8 +26,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h \
  ../Core/Inc/i2c.h ../Core/Inc/main.h ../Core/Inc/usart.h \
- ../Core/Inc/gpio.h ../Core/Inc/TMP_i2c.h ../Core/Inc/lib_lcd.h \
- ../Core/Inc/caracter.h ../Core/Inc/usart.h \
+ ../Core/Inc/gpio.h ../Core/Inc/lib_lcd.h ../Core/Inc/caracter.h \
+ ../Core/Inc/usart.h \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_Hal_uart.h
 
 ../Core/Inc/main.h:
@@ -91,8 +91,6 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Inc/usart.h:
 
 ../Core/Inc/gpio.h:
-
-../Core/Inc/TMP_i2c.h:
 
 ../Core/Inc/lib_lcd.h:
 

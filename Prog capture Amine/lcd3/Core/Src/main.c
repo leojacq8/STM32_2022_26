@@ -37,18 +37,17 @@
   ******************************************************************************
   */
 /* USER CODE END Header */
-
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "i2c.h"
 #include "usart.h"
 #include "gpio.h"
-#include "TMP_i2c.h"
-#include "string.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "lib_lcd.h"
 #include "caracter.h"
+#include <string.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -69,6 +68,8 @@ static rgb_lcd lcdData;
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+
+static uint8_t device_ID[] = "002";
 
 /* USER CODE END PV */
 
@@ -91,6 +92,11 @@ int main(void)
 {
   /* USER CODE BEGIN 1 */
 
+	  uint8_t send_buffer[100] ="";
+	  uint8_t temp[128] = "";
+	  uint8_t i = 0;
+	  uint8_t data_extract_temp[100];
+
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -111,20 +117,35 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_USART2_UART_Init();
   MX_I2C1_Init();
+  MX_UART4_Init();
+  MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
+
+
+
+  /* -------- AFFICHAGE--------*/
+
   lcd_init(&hi2c1, &lcdData); // initialise le lcd
   lcd_position(&hi2c1,0,0);
-  lcd_print(&hi2c1,"Temperature ");// ecris la temperature sur le lcd
+  lcd_print(&hi2c1,"Temperature ");// ecris "temperature" sur le lcd
   lcd_position(&hi2c1,0,1);
-  lcd_print(&hi2c1,"Humidite: ");// ecris la temperature sur le lcd
+  lcd_print(&hi2c1,"Humidite: ");// ecris "Humidité " sur le lcd
   reglagecouleur(50,50,9);
+
+
+
+
+
+
   /* USER CODE END 2 */
 
-    float temp=0;
-    float humidity=0;
-    TMP_init(hi2c1);
+
+  	  float temperature=0;
+      float humidity=0;
+      TMP_init(hi2c1);
+
+
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
@@ -132,24 +153,69 @@ int main(void)
   {
     /* USER CODE END WHILE */
 	  char res [10];
-	  Temp_read(&temp, &humidity);
 
-	  ftoat (temp,res,1);
-	  lcd_position(&hi2c1,12,0);
-	  lcd_print(&hi2c1,res);
+	  	  Temp_read(&temperature, &humidity);
 
-	  ftoat (humidity,res,1);
-	  lcd_position(&hi2c1,10,1);
-	  lcd_print(&hi2c1,res);
+	  	  ftoat (temperature,res,1);
+	  	  lcd_position(&hi2c1,12,0);
+	  	  lcd_print(&hi2c1,res);
+
+	  	  ftoat (humidity,res,1);
+	  	  lcd_position(&hi2c1,10,1);
+	  	  lcd_print(&hi2c1,res);
 
 
-	 print("la temperature est =%f\n\r ", temp);
-	 print("l'humidité est =%f\n\r ", humidity);
-	  HAL_Delay(1000);
-	  //HAL_GPIO_WritePin(LD2_GPIO_Port,LD2_Pin,0);
+	  	 print("la temperature est =%f\n\r ", temperature);
+	  	 print("l'humidité est =%f\n\r ", humidity);
+	  	  HAL_Delay(1000);
 
 
     /* USER CODE BEGIN 3 */
+
+
+
+	  	/* -------- Envoi de données via XBEE--------*/
+
+
+
+
+
+
+	  	  char send_buffer[100];
+
+          memset(send_buffer,0, sizeof(send_buffer));
+          strcat((char *)send_buffer,"$");
+
+
+          memset(temp,0, sizeof(temp));
+          sprintf((char *)temp,"&i=%d", device_ID);
+          strcat((char *)send_buffer,(char *)temp);
+
+
+          memset(temp,0, sizeof(temp));
+          sprintf((char *)temp,"&t=%.2f", temperature);
+          strcat((char *)send_buffer,(char *)temp);
+
+
+          memset(temp,0, sizeof(temp));
+          sprintf((char *)humidity,"&h=%.2f", humidity);
+          strcat((char *)send_buffer,(char *)temp);
+          strcat((char *)send_buffer,(char *)"\r\n");
+
+
+          strcat((char *)send_buffer,"&i=");
+          strcat((char *)send_buffer,(char *)res);
+          strcat((char *)send_buffer,"\r\n");
+
+
+	 // HAL_UART_Transmit(&huart4,(uint8_t*)"Salut",strlen("Salut"),100);
+
+
+          HAL_UART_Transmit(&huart4,(uint8_t*)send_buffer, strlen((char *)send_buffer), 100);
+
+         // HAL_Delay(1000);
+
+
   }
   /* USER CODE END 3 */
 }
@@ -163,10 +229,11 @@ void SystemClock_Config(void)
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
 
-  /**Configure the main internal regulator output voltage
+  /** Configure the main internal regulator output voltage
   */
   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
-  /**Initializes the CPU, AHB and APB busses clocks
+  /** Initializes the RCC Oscillators according to the specified parameters
+  * in the RCC_OscInitTypeDef structure.
   */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
@@ -179,7 +246,7 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-  /**Initializes the CPU, AHB and APB busses clocks
+  /** Initializes the CPU, AHB and APB buses clocks
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
@@ -227,4 +294,3 @@ void assert_failed(uint8_t *file, uint32_t line)
 }
 #endif /* USE_FULL_ASSERT */
 
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
