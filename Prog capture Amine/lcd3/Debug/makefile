@@ -61,7 +61,7 @@ main-build: lcd3.elf secondary-outputs
 
 # Tool invocations
 lcd3.elf: $(OBJS) $(USER_OBJS) C:\Users\VMI\STM32CubeIDE\workspace_1.8.0\lcd3\STM32L152RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "lcd3.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\VMI\STM32CubeIDE\workspace_1.8.0\lcd3\STM32L152RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd3.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+	arm-none-eabi-gcc -o "lcd3.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\VMI\STM32CubeIDE\workspace_1.8.0\lcd3\STM32L152RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lcd3.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
