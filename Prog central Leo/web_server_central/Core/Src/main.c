@@ -61,7 +61,7 @@ rgb_lcd rgbData;
 static struct DHT22 DHT22_1;
 static uint8_t device_ID[] = "001";
 static uint8_t DMA_buff[DMA_SIZE] = "";
-static uint8_t USART1_BUFFER[USART1_BUFFER_SIZE];
+static uint8_t USART1_BUFFER[USART1_BUFFER_SIZE] = "";
 //static uint8_t USART4_BUFFER[256];
 
 static enum STATE        fsm_state;
@@ -187,67 +187,9 @@ int main(void)
 
 	        	  //HAL_UART_Receive(&huart2,USART2_BUFFER, strlen((char *)USART2_BUFFER), 5000);
 
-		    	  fsm_state = ST_GET_DATA;
-	        	  break;
-
-	          /***********************************/
-		      /*				GET_DATA			*/
-		      /***********************************/
-		       case ST_GET_DATA:
-
-	   			  get_try = 0;
-	   			  data_ok = 0;
-
-		    	   while((get_try < 3 ) && (data_ok == 0))
-		    	   {
-
-			    	   if(DHT22_Start(&DHT22_1) == 0)
-			    	   	  {
-			    	   		  if( DHT22_Check_Response(&DHT22_1)== 0)
-			    	   		  {
-			    	   			  if(DHT22_Read_Temp_Hum(&DHT22_1) == 0)
-			    	   			  {
-			    	   				  clearlcd();
-
-			    	   				  lcd_position(&hi2c1,0,0);
-
-			    	   				  memset(temp,0,sizeof(temp));
-			    	   				  sprintf((char*)temp,"Hum: %.2f %c ",DHT22_1.humidity, 0x25);
-			    	   				  lcd_print(&hi2c1,(char*)temp);
-
-			    	   				  lcd_position(&hi2c1,0,1);
-
-			    	   				  memset(temp,0,sizeof(temp));
-			    	   				  sprintf((char*)temp,"Temp: %.2fC  ",DHT22_1.temperature);
-			    	   				  lcd_print(&hi2c1,(char*)temp);
-
-			    	   				  get_try = 0;
-			    	   				  data_ok = 1;
-			    	   			  }
-			    	   			  else
-			    	   			  {
-					    	   		HAL_Delay(1000);
-			    	   				get_try++;
-			    	   			  }
-
-			    	   		  }
-			    	   		  else
-			    	   		  {
-				    	   		    HAL_Delay(1000);
-			    	   				get_try++;
-			    	   		  }
-
-			    	   	  }
-			    	   	  else
-			    	   	  {
-			    	   		    HAL_Delay(1000);
-		    	   				get_try++;
-			    	   	  }
-		    	   }
-
+				   //HAL_Delay(2000);
 			      fsm_state = ST_CHECK_DMA;
-		    	 // fsm_state = ST_CHECK_DMA;
-		          break;
+	        	  break;
 
 			 /***********************************/
 			 /*				SEND DATA			*/
@@ -292,15 +234,74 @@ int main(void)
 						}
 
 
-			    	  fsm_state = ST_SEND_DATA;
+			    	  fsm_state = ST_GET_DATA;
 			          break;
 				 }
 				 else
 				 {
 					 HAL_Delay(1000);
-			    	 fsm_state = ST_CHECK_DMA;
+			    	fsm_state = ST_CHECK_DMA;
 			         break;
 				 }
+
+
+		          /***********************************/
+			      /*				GET_DATA			*/
+			      /***********************************/
+			       case ST_GET_DATA:
+
+		   			  get_try = 0;
+		   			  data_ok = 0;
+
+			    	   while((get_try < 3 ) && (data_ok == 0))
+			    	   {
+
+				    	   if(DHT22_Start(&DHT22_1) == 0)
+				    	   	  {
+				    	   		  if( DHT22_Check_Response(&DHT22_1)== 0)
+				    	   		  {
+				    	   			  if(DHT22_Read_Temp_Hum(&DHT22_1) == 0)
+				    	   			  {
+				    	   				  clearlcd();
+
+				    	   				  lcd_position(&hi2c1,0,0);
+
+				    	   				  memset(temp,0,sizeof(temp));
+				    	   				  sprintf((char*)temp,"Hum: %.2f %c ",DHT22_1.humidity, 0x25);
+				    	   				  lcd_print(&hi2c1,(char*)temp);
+
+				    	   				  lcd_position(&hi2c1,0,1);
+
+				    	   				  memset(temp,0,sizeof(temp));
+				    	   				  sprintf((char*)temp,"Temp: %.2fC  ",DHT22_1.temperature);
+				    	   				  lcd_print(&hi2c1,(char*)temp);
+
+				    	   				  get_try = 0;
+				    	   				  data_ok = 1;
+				    	   			  }
+				    	   			  else
+				    	   			  {
+						    	   		HAL_Delay(1000);
+				    	   				get_try++;
+				    	   			  }
+
+				    	   		  }
+				    	   		  else
+				    	   		  {
+					    	   		    HAL_Delay(1000);
+				    	   				get_try++;
+				    	   		  }
+
+				    	   	  }
+				    	   	  else
+				    	   	  {
+				    	   		    HAL_Delay(1000);
+			    	   				get_try++;
+				    	   	  }
+			    	   }
+
+				      fsm_state = ST_SEND_DATA;
+			          break;
 
 			 /***********************************/
 			 /*				SEND DATA			*/
@@ -329,24 +330,16 @@ int main(void)
 
 				 set_usar1_irq(0);
 				 HAL_UART_Transmit(&huart1,(uint8_t*)send_buffer, strlen((char *)send_buffer), 100);
-				 while (get_usar1_irq()!=1 && wd_timer <= 50)
+				 while (get_usar1_irq()!=1 && wd_timer <= 500)
 				 {
-				 	HAL_Delay(1);
+				 	HAL_Delay(10);
 				 	wd_timer++;
 				 }
 				 if (get_usar1_irq() ==1)
 				 {
 					HAL_Delay(30);
 					HAL_UART_Receive(&huart1,(uint8_t*)USART1_BUFFER, strlen((char *)USART1_BUFFER), 10);
-				 }/*
-				 if(strstr((char*)USART1_BUFFER, (char*)ref_str)!=NULL)
-				 {
-				  return ERR_NONE;
 				 }
-				 else
-				 {
-				 	return ERR_FAILURE;
-				 }*/
 
 		    	 fsm_state = ST_CHECK_RESP;
 		         break;

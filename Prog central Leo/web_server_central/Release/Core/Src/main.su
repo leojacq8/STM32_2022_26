@@ -1,6 +1,5 @@
-main.c:77:6:HAL_UART_RxCpltCallback	0	static
+main.c:75:6:HAL_UART_RxCpltCallback	8	static
 main.c:83:6:rx_cb_USART_1	0	static
-main.c:88:6:rx_cb_USART_4	0	static
-main.c:392:6:SystemClock_Config	80	static,ignoring_inline_asm
-main.c:104:5:main	272	static,ignoring_inline_asm
-main.c:439:6:Error_Handler	0	static,ignoring_inline_asm
+main.c:393:6:SystemClock_Config	80	static,ignoring_inline_asm
+main.c:104:5:main	504	static,ignoring_inline_asm
+main.c:440:6:Error_Handler	0	static,ignoring_inline_asm
