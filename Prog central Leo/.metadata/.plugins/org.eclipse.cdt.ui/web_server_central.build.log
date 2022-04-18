@@ -1,10 +1,17 @@
-20:40:40 **** Incremental Build of configuration Debug for project web_server_central ****
+17:15:23 **** Incremental Build of configuration Debug for project web_server_central ****
 make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I../Core/Inc -I".. /ioLibrary_Driver/Ethernet" -I".. /ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "web_server_central.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\ECOLE\MASTER\Realisation systeme\STM32\Github\STM32_2022_26\Prog central Leo\web_server_central\STM32L152RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="web_server_central.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: web_server_central.elf
+ 
 arm-none-eabi-size   web_server_central.elf 
+arm-none-eabi-objdump -h -S  web_server_central.elf  > "web_server_central.list"
    text	   data	    bss	    dec	    hex	filename
-  36488	    488	   2256	  39232	   9940	web_server_central.elf
+  38668	    488	   2040	  41196	   a0ec	web_server_central.elf
 Finished building: default.size.stdout
  
+Finished building: web_server_central.list
+ 
 
-20:40:40 Build Finished. 0 errors, 0 warnings. (took 223ms)
+17:15:25 Build Finished. 0 errors, 0 warnings. (took 2s.682ms)
 

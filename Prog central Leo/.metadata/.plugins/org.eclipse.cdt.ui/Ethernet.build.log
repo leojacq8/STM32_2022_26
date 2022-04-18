@@ -1,0 +1,98 @@
+19:42:35 **** Incremental Build of configuration Debug for project Ethernet ****
+make -j16 all 
+arm-none-eabi-gcc "../ioLibrary_Driver/Internet/FTPClient/ftpc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Ethernet/ioLibrary_Driver/Ethernet" -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Ethernet/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Internet/FTPClient/ftpc.d" -MT"ioLibrary_Driver/Internet/FTPClient/ftpc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Internet/FTPClient/ftpc.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Ethernet/ioLibrary_Driver/Ethernet" -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Ethernet/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../ioLibrary_Driver/Internet/FTPClient/ftpc.c:1:
+../ioLibrary_Driver/Internet/FTPClient/ftpc.h:34:17: warning: extra tokens at end of #ifndef directive
+   34 | #ifndef ftp_getc()
+      |                 ^
+../ioLibrary_Driver/Internet/FTPClient/ftpc.c: In function 'proc_ftpc':
+../ioLibrary_Driver/Internet/FTPClient/ftpc.c:478:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  478 |    sprintf(dat,"USER %s\r\n", User_Keyboard_MSG());
+      |            ^~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../ioLibrary_Driver/Internet/FTPClient/ftpc.h:9,
+                 from ../ioLibrary_Driver/Internet/FTPClient/ftpc.c:1:
+c:\st\stm32cubeide_1.9.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../ioLibrary_Driver/Internet/FTPClient/ftpc.c:480:43: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+  480 |    send(CTRL_SOCK, (uint8_t *)dat, strlen(dat));
+      |                                           ^~~
+      |                                           |
+      |                                           uint8_t * {aka unsigned char *}
+In file included from ../ioLibrary_Driver/Internet/FTPClient/ftpc.h:11,
+                 from ../ioLibrary_Driver/Internet/FTPClient/ftpc.c:1:
+c:\st\stm32cubeide_1.9.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\string.h:41:17: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   41 | size_t  strlen (const char *);
+      |                 ^~~~~~~~~~~~
+../ioLibrary_Driver/Internet/FTPClient/ftpc.c:485:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  485 |    sprintf(dat,"PASS %s\r\n", User_Keyboard_MSG());
+      |            ^~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../ioLibrary_Driver/Internet/FTPClient/ftpc.h:9,
+                 from ../ioLibrary_Driver/Internet/FTPClient/ftpc.c:1:
+c:\st\stm32cubeide_1.9.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../ioLibrary_Driver/Internet/FTPClient/ftpc.c:487:43: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+  487 |    send(CTRL_SOCK, (uint8_t *)dat, strlen(dat));
+      |                                           ^~~
+      |                                           |
+      |                                           uint8_t * {aka unsigned char *}
+In file included from ../ioLibrary_Driver/Internet/FTPClient/ftpc.h:11,
+                 from ../ioLibrary_Driver/Internet/FTPClient/ftpc.c:1:
+c:\st\stm32cubeide_1.9.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\string.h:41:17: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   41 | size_t  strlen (const char *);
+      |                 ^~~~~~~~~~~~
+../ioLibrary_Driver/Internet/FTPClient/ftpc.c:492:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  492 |    sprintf(dat,"TYPE %c\r\n", TransferAscii);
+      |            ^~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../ioLibrary_Driver/Internet/FTPClient/ftpc.h:9,
+                 from ../ioLibrary_Driver/Internet/FTPClient/ftpc.c:1:
+c:\st\stm32cubeide_1.9.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../ioLibrary_Driver/Internet/FTPClient/ftpc.c:494:43: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+  494 |    send(CTRL_SOCK, (uint8_t *)dat, strlen(dat));
+      |                                           ^~~
+      |                                           |
+      |                                           uint8_t * {aka unsigned char *}
+In file included from ../ioLibrary_Driver/Internet/FTPClient/ftpc.h:11,
+                 from ../ioLibrary_Driver/Internet/FTPClient/ftpc.c:1:
+c:\st\stm32cubeide_1.9.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\string.h:41:17: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   41 | size_t  strlen (const char *);
+      |                 ^~~~~~~~~~~~
+../ioLibrary_Driver/Internet/FTPClient/ftpc.c: In function 'User_Keyboard_MSG':
+../ioLibrary_Driver/Internet/FTPClient/ftpc.c:579:16: warning: implicit declaration of function 'ftp_getc'; did you mean 'fgetc'? [-Wimplicit-function-declaration]
+  579 |   gMsgBuf[i] = ftp_getc();
+      |                ^~~~~~~~
+      |                fgetc
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:37:25: warning: pointer targets in passing argument 2 of 'send' differ in signedness [-Wpointer-sign]
+   37 | #define GREETING_MSG    "Well done guys! Welcome to the IoT world. Bye!\r\n"
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                         |
+      |                         char *
+../Core/Src/main.c:37:25: note: in definition of macro 'GREETING_MSG'
+   37 | #define GREETING_MSG    "Well done guys! Welcome to the IoT world. Bye!\r\n"
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../Core/Src/main.c:25:
+E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Ethernet/ioLibrary_Driver/Ethernet/socket.h:250:36: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char *'
+  250 | int32_t send(uint8_t sn, uint8_t * buf, uint16_t len);
+      |                          ~~~~~~~~~~^~~
+arm-none-eabi-gcc -o "Ethernet.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\ECOLE\MASTER\Realisation systeme\STM32\Github\STM32_2022_26\Prog central Leo\Ethernet\STM32L152RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ethernet.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+c:\st\stm32cubeide_1.9.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\bin\ld.exe: ./ioLibrary_Driver/Internet/FTPServer/ftpd.o:E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Ethernet/Debug/../ioLibrary_Driver/Internet/FTPServer/ftpd.c:95: multiple definition of `remote_ip'; ./ioLibrary_Driver/Internet/FTPClient/ftpc.o:E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Ethernet/Debug/../ioLibrary_Driver/Internet/FTPClient/ftpc.c:3: first defined here
+c:\st\stm32cubeide_1.9.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\bin\ld.exe: ./ioLibrary_Driver/Internet/FTPServer/ftpd.o:E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Ethernet/Debug/../ioLibrary_Driver/Internet/FTPServer/ftpd.c:96: multiple definition of `remote_port'; ./ioLibrary_Driver/Internet/FTPClient/ftpc.o:E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Ethernet/Debug/../ioLibrary_Driver/Internet/FTPClient/ftpc.c:4: first defined here
+c:\st\stm32cubeide_1.9.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\bin\ld.exe: ./ioLibrary_Driver/Internet/FTPServer/ftpd.o:E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Ethernet/Debug/../ioLibrary_Driver/Internet/FTPServer/ftpd.c:97: multiple definition of `local_ip'; ./ioLibrary_Driver/Internet/FTPClient/ftpc.o:E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Ethernet/Debug/../ioLibrary_Driver/Internet/FTPClient/ftpc.c:5: first defined here
+c:\st\stm32cubeide_1.9.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\bin\ld.exe: ./ioLibrary_Driver/Internet/FTPServer/ftpd.o:E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Ethernet/Debug/../ioLibrary_Driver/Internet/FTPServer/ftpd.c:98: multiple definition of `local_port'; ./ioLibrary_Driver/Internet/FTPClient/ftpc.o:E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Ethernet/Debug/../ioLibrary_Driver/Internet/FTPClient/ftpc.c:6: first defined here
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:82: Ethernet.elf] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+
+19:42:36 Build Failed. 5 errors, 9 warnings. (took 729ms)
+

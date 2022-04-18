@@ -1,0 +1,511 @@
+20:29:35 **** Incremental Build of configuration Debug for project Test ****
+make -j16 all 
+arm-none-eabi-gcc "../ioLibrary_Driver/Internet/httpServer/httpParser.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Internet/httpServer/httpParser.d" -MT"ioLibrary_Driver/Internet/httpServer/httpParser.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Internet/httpServer/httpParser.o"
+arm-none-eabi-gcc "../ioLibrary_Driver/Internet/httpServer/httpServer.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Internet/httpServer/httpServer.d" -MT"ioLibrary_Driver/Internet/httpServer/httpServer.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Internet/httpServer/httpServer.o"
+arm-none-eabi-gcc "../ioLibrary_Driver/Internet/httpServer/httpUtil.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Internet/httpServer/httpUtil.d" -MT"ioLibrary_Driver/Internet/httpServer/httpUtil.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Internet/httpServer/httpUtil.o"
+arm-none-eabi-gcc "../ioLibrary_Driver/Internet/TFTP/netutil.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Internet/TFTP/netutil.d" -MT"ioLibrary_Driver/Internet/TFTP/netutil.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Internet/TFTP/netutil.o"
+arm-none-eabi-gcc "../ioLibrary_Driver/Internet/TFTP/tftp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Internet/TFTP/tftp.d" -MT"ioLibrary_Driver/Internet/TFTP/tftp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Internet/TFTP/tftp.o"
+arm-none-eabi-gcc "../ioLibrary_Driver/Internet/SNTP/sntp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Internet/SNTP/sntp.d" -MT"ioLibrary_Driver/Internet/SNTP/sntp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Internet/SNTP/sntp.o"
+arm-none-eabi-gcc "../ioLibrary_Driver/Internet/SNMP/snmp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Internet/SNMP/snmp.d" -MT"ioLibrary_Driver/Internet/SNMP/snmp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Internet/SNMP/snmp.o"
+arm-none-eabi-gcc "../ioLibrary_Driver/Internet/SNMP/snmp_custom.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Internet/SNMP/snmp_custom.d" -MT"ioLibrary_Driver/Internet/SNMP/snmp_custom.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Internet/SNMP/snmp_custom.o"
+arm-none-eabi-gcc "../ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTConnectClient.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTConnectClient.d" -MT"ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTConnectClient.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTConnectClient.o"
+arm-none-eabi-gcc "../ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTConnectServer.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTConnectServer.d" -MT"ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTConnectServer.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTConnectServer.o"
+arm-none-eabi-gcc "../ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTDeserializePublish.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTDeserializePublish.d" -MT"ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTDeserializePublish.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTDeserializePublish.o"
+arm-none-eabi-gcc "../ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTFormat.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTFormat.d" -MT"ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTFormat.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTFormat.o"
+arm-none-eabi-gcc "../ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTPacket.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTPacket.d" -MT"ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTPacket.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTPacket.o"
+arm-none-eabi-gcc "../ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTSerializePublish.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTSerializePublish.d" -MT"ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTSerializePublish.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTSerializePublish.o"
+arm-none-eabi-gcc "../ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTSubscribeClient.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTSubscribeClient.d" -MT"ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTSubscribeClient.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTSubscribeClient.o"
+arm-none-eabi-gcc "../ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTSubscribeServer.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTSubscribeServer.d" -MT"ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTSubscribeServer.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTSubscribeServer.o"
+In file included from ../ioLibrary_Driver/Internet/TFTP/tftp.c:10:
+../ioLibrary_Driver/Internet/TFTP/tftp.c: In function 'send_tftp_rrq':
+../ioLibrary_Driver/Internet/httpServer/httpUtil.c: In function 'predefined_get_cgi_processor':
+../ioLibrary_Driver/Internet/httpServer/httpUtil.c:70:1: warning: control reaches end of non-void function [-Wreturn-type]
+   70 | }
+      | ^
+../ioLibrary_Driver/Internet/httpServer/httpUtil.c: In function 'predefined_set_cgi_processor':
+../ioLibrary_Driver/Internet/httpServer/httpUtil.c:75:1: warning: control reaches end of non-void function [-Wreturn-type]
+   75 | }
+      | ^
+../ioLibrary_Driver/Internet/TFTP/tftp.h:30:13: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   30 |             printf(format, ##args); \
+      |             ^~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c:266:2: note: in expansion of macro 'DBG_PRINT'
+  266 |  DBG_PRINT(IPC_DBG, ">> TFTP RRQ : FileName(%s), Mode(%s)\r\n", filename, mode);
+      |  ^~~~~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.h:30:13: warning: incompatible implicit declaration of built-in function 'printf'
+   30 |             printf(format, ##args); \
+      |             ^~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c:266:2: note: in expansion of macro 'DBG_PRINT'
+  266 |  DBG_PRINT(IPC_DBG, ">> TFTP RRQ : FileName(%s), Mode(%s)\r\n", filename, mode);
+      |  ^~~~~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c:13:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   12 | #include "netutil.h"
+  +++ |+#include <stdio.h>
+   13 | 
+In file included from ../ioLibrary_Driver/Internet/TFTP/tftp.c:10:
+../ioLibrary_Driver/Internet/TFTP/tftp.c: In function 'send_tftp_ack':
+../ioLibrary_Driver/Internet/TFTP/tftp.h:30:13: warning: incompatible implicit declaration of built-in function 'printf'
+   30 |             printf(format, ##args); \
+      |             ^~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c:340:2: note: in expansion of macro 'DBG_PRINT'
+  340 |  DBG_PRINT(IPC_DBG, ">> TFTP ACK : Block Number(%d)\r\n", block_number);
+      |  ^~~~~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.h:30:13: note: include '<stdio.h>' or provide a declaration of 'printf'
+   30 |             printf(format, ##args); \
+      |             ^~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c:340:2: note: in expansion of macro 'DBG_PRINT'
+  340 |  DBG_PRINT(IPC_DBG, ">> TFTP ACK : Block Number(%d)\r\n", block_number);
+      |  ^~~~~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c: In function 'recv_tftp_data':
+../ioLibrary_Driver/Internet/TFTP/tftp.h:30:13: warning: incompatible implicit declaration of built-in function 'printf'
+   30 |             printf(format, ##args); \
+      |             ^~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c:412:2: note: in expansion of macro 'DBG_PRINT'
+  412 |  DBG_PRINT(IPC_DBG, "<< TFTP_DATA : opcode(%d), block_num(%d)\r\n", data->opcode, data->block_num);
+      |  ^~~~~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.h:30:13: note: include '<stdio.h>' or provide a declaration of 'printf'
+   30 |             printf(format, ##args); \
+      |             ^~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c:412:2: note: in expansion of macro 'DBG_PRINT'
+  412 |  DBG_PRINT(IPC_DBG, "<< TFTP_DATA : opcode(%d), block_num(%d)\r\n", data->opcode, data->block_num);
+      |  ^~~~~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c: In function 'recv_tftp_ack':
+../ioLibrary_Driver/Internet/TFTP/tftp.h:30:13: warning: incompatible implicit declaration of built-in function 'printf'
+   30 |             printf(format, ##args); \
+      |             ^~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c:462:2: note: in expansion of macro 'DBG_PRINT'
+  462 |  DBG_PRINT(IPC_DBG, "<< TFTP_ACK : \r\n");
+      |  ^~~~~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.h:30:13: note: include '<stdio.h>' or provide a declaration of 'printf'
+   30 |             printf(format, ##args); \
+      |             ^~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c:462:2: note: in expansion of macro 'DBG_PRINT'
+  462 |  DBG_PRINT(IPC_DBG, "<< TFTP_ACK : \r\n");
+      |  ^~~~~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c: In function 'recv_tftp_oack':
+../ioLibrary_Driver/Internet/TFTP/tftp.h:30:13: warning: incompatible implicit declaration of built-in function 'printf'
+   30 |             printf(format, ##args); \
+      |             ^~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c:482:2: note: in expansion of macro 'DBG_PRINT'
+  482 |  DBG_PRINT(IPC_DBG, "<< TFTP_OACK : \r\n");
+      |  ^~~~~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.h:30:13: note: include '<stdio.h>' or provide a declaration of 'printf'
+   30 |             printf(format, ##args); \
+      |             ^~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c:482:2: note: in expansion of macro 'DBG_PRINT'
+  482 |  DBG_PRINT(IPC_DBG, "<< TFTP_OACK : \r\n");
+      |  ^~~~~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c: In function 'recv_tftp_error':
+../ioLibrary_Driver/Internet/TFTP/tftp.h:30:13: warning: incompatible implicit declaration of built-in function 'printf'
+   30 |             printf(format, ##args); \
+      |             ^~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c:517:2: note: in expansion of macro 'DBG_PRINT'
+  517 |  DBG_PRINT(IPC_DBG, "<< TFTP_ERROR : %d (%s)\r\n", data->error_code, data->error_msg);
+      |  ^~~~~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.h:30:13: note: include '<stdio.h>' or provide a declaration of 'printf'
+   30 |             printf(format, ##args); \
+      |             ^~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c:517:2: note: in expansion of macro 'DBG_PRINT'
+  517 |  DBG_PRINT(IPC_DBG, "<< TFTP_ERROR : %d (%s)\r\n", data->error_code, data->error_msg);
+      |  ^~~~~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.h:30:13: warning: incompatible implicit declaration of built-in function 'printf'
+   30 |             printf(format, ##args); \
+      |             ^~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c:518:2: note: in expansion of macro 'DBG_PRINT'
+  518 |  DBG_PRINT(ERROR_DBG, "[%s] Error Code : %d (%s)\r\n", __func__, data->error_code, data->error_msg);
+      |  ^~~~~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.h:30:13: note: include '<stdio.h>' or provide a declaration of 'printf'
+   30 |             printf(format, ##args); \
+      |             ^~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c:518:2: note: in expansion of macro 'DBG_PRINT'
+  518 |  DBG_PRINT(ERROR_DBG, "[%s] Error Code : %d (%s)\r\n", __func__, data->error_code, data->error_msg);
+      |  ^~~~~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c: In function 'recv_tftp_packet':
+../ioLibrary_Driver/Internet/TFTP/tftp.h:30:13: warning: incompatible implicit declaration of built-in function 'printf'
+   30 |             printf(format, ##args); \
+      |             ^~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c:531:3: note: in expansion of macro 'DBG_PRINT'
+  531 |   DBG_PRINT(ERROR_DBG, "[%s] Server IP faults\r\n", __func__);
+      |   ^~~~~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.h:30:13: note: include '<stdio.h>' or provide a declaration of 'printf'
+   30 |             printf(format, ##args); \
+      |             ^~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c:531:3: note: in expansion of macro 'DBG_PRINT'
+  531 |   DBG_PRINT(ERROR_DBG, "[%s] Server IP faults\r\n", __func__);
+      |   ^~~~~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.h:30:13: warning: incompatible implicit declaration of built-in function 'printf'
+   30 |             printf(format, ##args); \
+      |             ^~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c:532:3: note: in expansion of macro 'DBG_PRINT'
+  532 |   DBG_PRINT(ERROR_DBG, "from IP : %08x, Server IP : %08x\r\n", from_ip, get_server_ip());
+      |   ^~~~~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.h:30:13: note: include '<stdio.h>' or provide a declaration of 'printf'
+   30 |             printf(format, ##args); \
+      |             ^~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c:532:3: note: in expansion of macro 'DBG_PRINT'
+  532 |   DBG_PRINT(ERROR_DBG, "from IP : %08x, Server IP : %08x\r\n", from_ip, get_server_ip());
+      |   ^~~~~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c:532:24: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  532 |   DBG_PRINT(ERROR_DBG, "from IP : %08x, Server IP : %08x\r\n", from_ip, get_server_ip());
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ~~~~~~~
+      |                                                                |
+      |                                                                uint32_t {aka long unsigned int}
+../ioLibrary_Driver/Internet/TFTP/tftp.h:30:20: note: in definition of macro 'DBG_PRINT'
+   30 |             printf(format, ##args); \
+      |                    ^~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c:532:38: note: format string is defined here
+  532 |   DBG_PRINT(ERROR_DBG, "from IP : %08x, Server IP : %08x\r\n", from_ip, get_server_ip());
+      |                                   ~~~^
+      |                                      |
+      |                                      unsigned int
+      |                                   %08lx
+In file included from ../ioLibrary_Driver/Internet/TFTP/tftp.c:10:
+../ioLibrary_Driver/Internet/TFTP/tftp.c:532:24: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  532 |   DBG_PRINT(ERROR_DBG, "from IP : %08x, Server IP : %08x\r\n", from_ip, get_server_ip());
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~           ~~~~~~~~~~~~~~~
+      |                                                                         |
+      |                                                                         uint32_t {aka long unsigned int}
+../ioLibrary_Driver/Internet/TFTP/tftp.h:30:20: note: in definition of macro 'DBG_PRINT'
+   30 |             printf(format, ##args); \
+      |                    ^~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c:532:56: note: format string is defined here
+  532 |   DBG_PRINT(ERROR_DBG, "from IP : %08x, Server IP : %08x\r\n", from_ip, get_server_ip());
+      |                                                     ~~~^
+      |                                                        |
+      |                                                        unsigned int
+      |                                                     %08lx
+In file included from ../ioLibrary_Driver/Internet/TFTP/tftp.c:10:
+../ioLibrary_Driver/Internet/TFTP/tftp.h:30:13: warning: incompatible implicit declaration of built-in function 'printf'
+   30 |             printf(format, ##args); \
+      |             ^~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c:543:3: note: in expansion of macro 'DBG_PRINT'
+  543 |   DBG_PRINT(INFO_DBG, "[%s] Set Server Port : %d\r\n", __func__, from_port);
+      |   ^~~~~~~~~
+../ioLibrary_Driver/Internet/TFTP/netutil.c: In function 'inet_ntoa':
+../ioLibrary_Driver/Internet/TFTP/netutil.c:16:28: warning: format '%d' expects argument of type 'int', but argument 3 has type 'long int' [-Wformat=]
+   16 |  sprintf((char*)addr_str,"%d.%d.%d.%d",(int32_t)(addr>>24 & 0xFF),(int32_t)(addr>>16 & 0xFF),(int32_t)(addr>>8 & 0xFF),(int32_t)(addr & 0xFF));
+      |                           ~^           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                            |           |
+      |                            int         long int
+      |                           %ld
+../ioLibrary_Driver/Internet/TFTP/tftp.h:30:13: note: include '<stdio.h>' or provide a declaration of 'printf'
+   30 |             printf(format, ##args); \
+      |             ^~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c:543:3: note: in expansion of macro 'DBG_PRINT'
+  543 |   DBG_PRINT(INFO_DBG, "[%s] Set Server Port : %d\r\n", __func__, from_port);
+      |   ^~~~~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c: In function 'TFTP_run':
+../ioLibrary_Driver/Internet/TFTP/tftp.h:30:13: warning: incompatible implicit declaration of built-in function 'printf'
+   30 |             printf(format, ##args); \
+      |             ^~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c:635:3: note: in expansion of macro 'DBG_PRINT'
+  635 |   DBG_PRINT(ERROR_DBG, "[%s] recv_udp_packet error\r\n", __func__);
+      |   ^~~~~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.h:30:13: note: include '<stdio.h>' or provide a declaration of 'printf'
+   30 |             printf(format, ##args); \
+      |             ^~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c:635:3: note: in expansion of macro 'DBG_PRINT'
+  635 |   DBG_PRINT(ERROR_DBG, "[%s] recv_udp_packet error\r\n", __func__);
+      |   ^~~~~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c: In function 'TFTP_read_request':
+../ioLibrary_Driver/Internet/TFTP/tftp.h:30:13: warning: incompatible implicit declaration of built-in function 'printf'
+   30 |             printf(format, ##args); \
+      |             ^~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c:649:2: note: in expansion of macro 'DBG_PRINT'
+  649 |  DBG_PRINT(INFO_DBG, "[%s] Set Tftp Server : %x\r\n", __func__, server_ip);
+      |  ^~~~~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.h:30:13: note: include '<stdio.h>' or provide a declaration of 'printf'
+   30 |             printf(format, ##args); \
+      |             ^~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c:649:2: note: in expansion of macro 'DBG_PRINT'
+  649 |  DBG_PRINT(INFO_DBG, "[%s] Set Tftp Server : %x\r\n", __func__, server_ip);
+      |  ^~~~~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c:649:22: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  649 |  DBG_PRINT(INFO_DBG, "[%s] Set Tftp Server : %x\r\n", __func__, server_ip);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~            ~~~~~~~~~
+      |                                                                 |
+      |                                                                 uint32_t {aka long unsigned int}
+../ioLibrary_Driver/Internet/TFTP/tftp.h:30:20: note: in definition of macro 'DBG_PRINT'
+   30 |             printf(format, ##args); \
+      |                    ^~~~~~
+../ioLibrary_Driver/Internet/TFTP/tftp.c:649:47: note: format string is defined here
+  649 |  DBG_PRINT(INFO_DBG, "[%s] Set Tftp Server : %x\r\n", __func__, server_ip);
+      |                                              ~^
+      |                                               |
+      |                                               unsigned int
+      |                                              %lx
+../ioLibrary_Driver/Internet/SNMP/snmp.c: In function 'ipToByteArray':
+../ioLibrary_Driver/Internet/SNMP/snmp.c:729:30: warning: format '%u' expects argument of type 'unsigned int *', but argument 3 has type 'uint32_t *' {aka 'long unsigned int *'} [-Wformat=]
+  729 |  sscanf((char const*)buff, "%u %u %u %u", &ip1, &ip2, &ip3, &ip4);
+      |                             ~^            ~~~~
+      |                              |            |
+      |                              |            uint32_t * {aka long unsigned int *}
+      |                              unsigned int *
+      |                             %lu
+../ioLibrary_Driver/Internet/SNMP/snmp.c:729:33: warning: format '%u' expects argument of type 'unsigned int *', but argument 4 has type 'uint32_t *' {aka 'long unsigned int *'} [-Wformat=]
+  729 |  sscanf((char const*)buff, "%u %u %u %u", &ip1, &ip2, &ip3, &ip4);
+      |                                ~^               ~~~~
+      |                                 |               |
+      |                                 unsigned int *  uint32_t * {aka long unsigned int *}
+      |                                %lu
+../ioLibrary_Driver/Internet/SNMP/snmp.c:729:36: warning: format '%u' expects argument of type 'unsigned int *', but argument 5 has type 'uint32_t *' {aka 'long unsigned int *'} [-Wformat=]
+  729 |  sscanf((char const*)buff, "%u %u %u %u", &ip1, &ip2, &ip3, &ip4);
+      |                                   ~^                  ~~~~
+      |                                    |                  |
+      |                                    unsigned int *     uint32_t * {aka long unsigned int *}
+      |                                   %lu
+../ioLibrary_Driver/Internet/SNMP/snmp.c:729:39: warning: format '%u' expects argument of type 'unsigned int *', but argument 6 has type 'uint32_t *' {aka 'long unsigned int *'} [-Wformat=]
+  729 |  sscanf((char const*)buff, "%u %u %u %u", &ip1, &ip2, &ip3, &ip4);
+      |                                      ~^                     ~~~~
+      |                                       |                     |
+      |                                       unsigned int *        uint32_t * {aka long unsigned int *}
+      |                                      %lu
+../ioLibrary_Driver/Internet/TFTP/netutil.c:16:31: warning: format '%d' expects argument of type 'int', but argument 4 has type 'long int' [-Wformat=]
+   16 |  sprintf((char*)addr_str,"%d.%d.%d.%d",(int32_t)(addr>>24 & 0xFF),(int32_t)(addr>>16 & 0xFF),(int32_t)(addr>>8 & 0xFF),(int32_t)(addr & 0xFF));
+      |                              ~^                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                               |                                   |
+      |                               int                                 long int
+      |                              %ld
+../ioLibrary_Driver/Internet/TFTP/netutil.c:16:34: warning: format '%d' expects argument of type 'int', but argument 5 has type 'long int' [-Wformat=]
+   16 |  sprintf((char*)addr_str,"%d.%d.%d.%d",(int32_t)(addr>>24 & 0xFF),(int32_t)(addr>>16 & 0xFF),(int32_t)(addr>>8 & 0xFF),(int32_t)(addr & 0xFF));
+      |                                 ~^                                                           ~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                  |                                                           |
+      |                                  int                                                         long int
+      |                                 %ld
+../ioLibrary_Driver/Internet/TFTP/netutil.c:16:37: warning: format '%d' expects argument of type 'int', but argument 6 has type 'long int' [-Wformat=]
+   16 |  sprintf((char*)addr_str,"%d.%d.%d.%d",(int32_t)(addr>>24 & 0xFF),(int32_t)(addr>>16 & 0xFF),(int32_t)(addr>>8 & 0xFF),(int32_t)(addr & 0xFF));
+      |                                    ~^                                                                                  ~~~~~~~~~~~~~~~~~~~~~~
+      |                                     |                                                                                  |
+      |                                     int                                                                                long int
+      |                                    %ld
+../ioLibrary_Driver/Internet/TFTP/netutil.c: In function 'inet_ntoa_pad':
+../ioLibrary_Driver/Internet/TFTP/netutil.c:31:30: warning: format '%d' expects argument of type 'int', but argument 3 has type 'long int' [-Wformat=]
+   31 |  sprintf((char*)addr_str,"%03d.%03d.%03d.%03d",(int32_t)(addr>>24 & 0xFF),(int32_t)(addr>>16 & 0xFF),(int32_t)(addr>>8 & 0xFF),(int32_t)(addr & 0xFF));
+      |                           ~~~^                 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                              |                 |
+      |                              int               long int
+      |                           %03ld
+../ioLibrary_Driver/Internet/TFTP/netutil.c:31:35: warning: format '%d' expects argument of type 'int', but argument 4 has type 'long int' [-Wformat=]
+   31 |  sprintf((char*)addr_str,"%03d.%03d.%03d.%03d",(int32_t)(addr>>24 & 0xFF),(int32_t)(addr>>16 & 0xFF),(int32_t)(addr>>8 & 0xFF),(int32_t)(addr & 0xFF));
+      |                                ~~~^                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                   |                                       |
+      |                                   int                                     long int
+      |                                %03ld
+../ioLibrary_Driver/Internet/TFTP/netutil.c:31:40: warning: format '%d' expects argument of type 'int', but argument 5 has type 'long int' [-Wformat=]
+   31 |  sprintf((char*)addr_str,"%03d.%03d.%03d.%03d",(int32_t)(addr>>24 & 0xFF),(int32_t)(addr>>16 & 0xFF),(int32_t)(addr>>8 & 0xFF),(int32_t)(addr & 0xFF));
+      |                                     ~~~^                                                             ~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                        |                                                             |
+      |                                        int                                                           long int
+      |                                     %03ld
+../ioLibrary_Driver/Internet/TFTP/netutil.c:31:45: warning: format '%d' expects argument of type 'int', but argument 6 has type 'long int' [-Wformat=]
+   31 |  sprintf((char*)addr_str,"%03d.%03d.%03d.%03d",(int32_t)(addr>>24 & 0xFF),(int32_t)(addr>>16 & 0xFF),(int32_t)(addr>>8 & 0xFF),(int32_t)(addr & 0xFF));
+      |                                          ~~~^                                                                                  ~~~~~~~~~~~~~~~~~~~~~~
+      |                                             |                                                                                  |
+      |                                             int                                                                                long int
+      |                                          %03ld
+arm-none-eabi-gcc "../ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTUnsubscribeClient.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTUnsubscribeClient.d" -MT"ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTUnsubscribeClient.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTUnsubscribeClient.o"
+arm-none-eabi-gcc "../ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTUnsubscribeServer.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTUnsubscribeServer.d" -MT"ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTUnsubscribeServer.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTUnsubscribeServer.o"
+arm-none-eabi-gcc "../ioLibrary_Driver/Internet/MQTT/MQTTClient.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Internet/MQTT/MQTTClient.d" -MT"ioLibrary_Driver/Internet/MQTT/MQTTClient.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Internet/MQTT/MQTTClient.o"
+arm-none-eabi-gcc "../ioLibrary_Driver/Internet/MQTT/mqtt_interface.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Internet/MQTT/mqtt_interface.d" -MT"ioLibrary_Driver/Internet/MQTT/mqtt_interface.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Internet/MQTT/mqtt_interface.o"
+arm-none-eabi-gcc "../ioLibrary_Driver/Internet/FTPServer/ftpd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Internet/FTPServer/ftpd.d" -MT"ioLibrary_Driver/Internet/FTPServer/ftpd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Internet/FTPServer/ftpd.o"
+arm-none-eabi-gcc "../ioLibrary_Driver/Internet/FTPClient/ftpc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Internet/FTPClient/ftpc.d" -MT"ioLibrary_Driver/Internet/FTPClient/ftpc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Internet/FTPClient/ftpc.o"
+arm-none-eabi-gcc "../ioLibrary_Driver/Internet/DNS/dns.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Internet/DNS/dns.d" -MT"ioLibrary_Driver/Internet/DNS/dns.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Internet/DNS/dns.o"
+arm-none-eabi-gcc "../ioLibrary_Driver/Internet/DHCP/dhcp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Internet/DHCP/dhcp.d" -MT"ioLibrary_Driver/Internet/DHCP/dhcp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Internet/DHCP/dhcp.o"
+arm-none-eabi-gcc "../ioLibrary_Driver/Ethernet/W5500/w5500.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Ethernet/W5500/w5500.d" -MT"ioLibrary_Driver/Ethernet/W5500/w5500.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Ethernet/W5500/w5500.o"
+arm-none-eabi-gcc "../ioLibrary_Driver/Ethernet/W5300/w5300.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Ethernet/W5300/w5300.d" -MT"ioLibrary_Driver/Ethernet/W5300/w5300.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Ethernet/W5300/w5300.o"
+arm-none-eabi-gcc "../ioLibrary_Driver/Ethernet/W5200/w5200.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Ethernet/W5200/w5200.d" -MT"ioLibrary_Driver/Ethernet/W5200/w5200.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Ethernet/W5200/w5200.o"
+arm-none-eabi-gcc "../ioLibrary_Driver/Ethernet/W5100S/w5100s.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Ethernet/W5100S/w5100s.d" -MT"ioLibrary_Driver/Ethernet/W5100S/w5100s.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Ethernet/W5100S/w5100s.o"
+arm-none-eabi-gcc "../ioLibrary_Driver/Ethernet/W5100/w5100.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Ethernet/W5100/w5100.d" -MT"ioLibrary_Driver/Ethernet/W5100/w5100.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Ethernet/W5100/w5100.o"
+arm-none-eabi-gcc "../ioLibrary_Driver/Ethernet/socket.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Ethernet/socket.d" -MT"ioLibrary_Driver/Ethernet/socket.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Ethernet/socket.o"
+arm-none-eabi-gcc "../ioLibrary_Driver/Ethernet/wizchip_conf.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Ethernet/wizchip_conf.d" -MT"ioLibrary_Driver/Ethernet/wizchip_conf.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Ethernet/wizchip_conf.o"
+arm-none-eabi-gcc "../ioLibrary_Driver/Application/multicast/multicast.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Application/multicast/multicast.d" -MT"ioLibrary_Driver/Application/multicast/multicast.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Application/multicast/multicast.o"
+In file included from ../ioLibrary_Driver/Internet/FTPClient/ftpc.c:1:
+../ioLibrary_Driver/Internet/FTPClient/ftpc.h:34:17: warning: extra tokens at end of #ifndef directive
+   34 | #ifndef ftp_getc()
+      |                 ^
+../ioLibrary_Driver/Internet/FTPClient/ftpc.c: In function 'proc_ftpc':
+../ioLibrary_Driver/Internet/FTPClient/ftpc.c:479:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  479 |    sprintf(dat,"USER %s\r\n", User_Keyboard_MSG());
+      |            ^~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../ioLibrary_Driver/Internet/FTPClient/ftpc.h:9,
+                 from ../ioLibrary_Driver/Internet/FTPClient/ftpc.c:1:
+c:\st\stm32cubeide_1.9.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../ioLibrary_Driver/Internet/FTPClient/ftpc.c:481:43: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+  481 |    send(CTRL_SOCK, (uint8_t *)dat, strlen(dat));
+      |                                           ^~~
+      |                                           |
+      |                                           uint8_t * {aka unsigned char *}
+In file included from ../ioLibrary_Driver/Internet/FTPClient/ftpc.h:11,
+                 from ../ioLibrary_Driver/Internet/FTPClient/ftpc.c:1:
+c:\st\stm32cubeide_1.9.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\string.h:41:17: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   41 | size_t  strlen (const char *);
+      |                 ^~~~~~~~~~~~
+../ioLibrary_Driver/Internet/FTPClient/ftpc.c:486:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  486 |    sprintf(dat,"PASS %s\r\n", User_Keyboard_MSG());
+      |            ^~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../ioLibrary_Driver/Internet/FTPClient/ftpc.h:9,
+                 from ../ioLibrary_Driver/Internet/FTPClient/ftpc.c:1:
+c:\st\stm32cubeide_1.9.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../ioLibrary_Driver/Internet/FTPClient/ftpc.c:488:43: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+  488 |    send(CTRL_SOCK, (uint8_t *)dat, strlen(dat));
+      |                                           ^~~
+      |                                           |
+      |                                           uint8_t * {aka unsigned char *}
+In file included from ../ioLibrary_Driver/Internet/FTPClient/ftpc.h:11,
+                 from ../ioLibrary_Driver/Internet/FTPClient/ftpc.c:1:
+c:\st\stm32cubeide_1.9.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\string.h:41:17: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   41 | size_t  strlen (const char *);
+      |                 ^~~~~~~~~~~~
+../ioLibrary_Driver/Internet/FTPClient/ftpc.c:493:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  493 |    sprintf(dat,"TYPE %c\r\n", TransferAscii);
+      |            ^~~
+      |            |
+      |            uint8_t * {aka unsigned char *}
+In file included from ../ioLibrary_Driver/Internet/FTPClient/ftpc.h:9,
+                 from ../ioLibrary_Driver/Internet/FTPClient/ftpc.c:1:
+c:\st\stm32cubeide_1.9.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../ioLibrary_Driver/Internet/FTPClient/ftpc.c:495:43: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+  495 |    send(CTRL_SOCK, (uint8_t *)dat, strlen(dat));
+      |                                           ^~~
+      |                                           |
+      |                                           uint8_t * {aka unsigned char *}
+In file included from ../ioLibrary_Driver/Internet/FTPClient/ftpc.h:11,
+                 from ../ioLibrary_Driver/Internet/FTPClient/ftpc.c:1:
+c:\st\stm32cubeide_1.9.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\string.h:41:17: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   41 | size_t  strlen (const char *);
+      |                 ^~~~~~~~~~~~
+../ioLibrary_Driver/Internet/FTPClient/ftpc.c: In function 'User_Keyboard_MSG':
+../ioLibrary_Driver/Internet/FTPClient/ftpc.c:580:16: warning: implicit declaration of function 'ftp_getc'; did you mean 'fgetc'? [-Wimplicit-function-declaration]
+  580 |   gMsgBuf[i] = ftp_getc();
+      |                ^~~~~~~~
+      |                fgetc
+arm-none-eabi-gcc "../ioLibrary_Driver/Application/loopback/loopback.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ioLibrary_Driver/Application/loopback/loopback.d" -MT"ioLibrary_Driver/Application/loopback/loopback.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "ioLibrary_Driver/Application/loopback/loopback.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o"
+../ioLibrary_Driver/Internet/DHCP/dhcp.c: In function 'parseDHCPMSG':
+../ioLibrary_Driver/Internet/DHCP/dhcp.c:604:4: warning: this 'else' clause does not guard... [-Wmisleading-indentation]
+  604 |    else return 0;
+      |    ^~~~
+../ioLibrary_Driver/Internet/DHCP/dhcp.c:605:2: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'else'
+  605 |  if (svr_port == DHCP_SERVER_PORT) {
+      |  ^~
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o"
+../ioLibrary_Driver/Internet/FTPServer/ftpd.c: In function 'ftpd_run':
+../ioLibrary_Driver/Internet/FTPServer/ftpd.c:296:25: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  296 |          size = sprintf(dbuf, "drwxr-xr-x 1 ftp ftp 0 Dec 31 2014 $Recycle.Bin\r\n-rwxr-xr-x 1 ftp ftp 512 Dec 31 2014 test.txt\r\n");
+      |                         ^~~~
+      |                         |
+      |                         uint8_t * {aka unsigned char *}
+In file included from ../ioLibrary_Driver/Internet/FTPServer/ftpd.c:13:
+c:\st\stm32cubeide_1.9.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../ioLibrary_Driver/Internet/FTPServer/ftpd.c:298:23: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+  298 |         size = strlen(dbuf);
+      |                       ^~~~
+      |                       |
+      |                       uint8_t * {aka unsigned char *}
+In file included from ../ioLibrary_Driver/Internet/FTPServer/ftpd.c:15:
+c:\st\stm32cubeide_1.9.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\string.h:41:17: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   41 | size_t  strlen (const char *);
+      |                 ^~~~~~~~~~~~
+../ioLibrary_Driver/Internet/FTPServer/ftpd.c:302:24: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  302 |         size = sprintf(dbuf, "226 Successfully transferred \"%s\"\r\n", ftp.workingdir);
+      |                        ^~~~
+      |                        |
+      |                        uint8_t * {aka unsigned char *}
+In file included from ../ioLibrary_Driver/Internet/FTPServer/ftpd.c:13:
+c:\st\stm32cubeide_1.9.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../ioLibrary_Driver/Internet/FTPServer/ftpd.c:355:26: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  355 |       blocklen = sprintf(dbuf, "%s", ftp.filename);
+      |                          ^~~~
+      |                          |
+      |                          uint8_t * {aka unsigned char *}
+In file included from ../ioLibrary_Driver/Internet/FTPServer/ftpd.c:13:
+c:\st\stm32cubeide_1.9.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../ioLibrary_Driver/Internet/FTPServer/ftpd.c:366:24: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  366 |         size = sprintf(dbuf, "226 Successfully transferred \"%s\"\r\n", ftp.filename);
+      |                        ^~~~
+      |                        |
+      |                        uint8_t * {aka unsigned char *}
+In file included from ../ioLibrary_Driver/Internet/FTPServer/ftpd.c:13:
+c:\st\stm32cubeide_1.9.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../ioLibrary_Driver/Internet/FTPServer/ftpd.c:469:24: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  469 |         size = sprintf(dbuf, "226 Successfully transferred \"%s\"\r\n", ftp.filename);
+      |                        ^~~~
+      |                        |
+      |                        uint8_t * {aka unsigned char *}
+In file included from ../ioLibrary_Driver/Internet/FTPServer/ftpd.c:13:
+c:\st\stm32cubeide_1.9.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../ioLibrary_Driver/Internet/FTPServer/ftpd.c:154:21: warning: unused variable 'send_byte' [-Wunused-variable]
+  154 |  uint32_t blocklen, send_byte, recv_byte;
+      |                     ^~~~~~~~~
+../ioLibrary_Driver/Internet/FTPServer/ftpd.c:152:21: warning: unused variable 'i' [-Wunused-variable]
+  152 |  uint16_t size = 0, i;
+      |                     ^
+../ioLibrary_Driver/Internet/FTPServer/ftpd.c: In function 'proc_ftpd':
+../ioLibrary_Driver/Internet/FTPServer/ftpd.c:713:33: warning: 'sprintf' may write a terminating nul past the end of the destination [-Wformat-overflow=]
+  713 |     sprintf(ftp.filename, "%s/%s", ftp.workingdir, arg);
+      |                                 ^
+../ioLibrary_Driver/Internet/FTPServer/ftpd.c:713:5: note: 'sprintf' output 2 or more bytes (assuming 101) into a destination of size 100
+  713 |     sprintf(ftp.filename, "%s/%s", ftp.workingdir, arg);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../ioLibrary_Driver/Internet/FTPServer/ftpd.c:696:33: warning: 'sprintf' may write a terminating nul past the end of the destination [-Wformat-overflow=]
+  696 |     sprintf(ftp.filename, "%s/%s", ftp.workingdir, arg);
+      |                                 ^
+../ioLibrary_Driver/Internet/FTPServer/ftpd.c:696:5: note: 'sprintf' output 2 or more bytes (assuming 101) into a destination of size 100
+  696 |     sprintf(ftp.filename, "%s/%s", ftp.workingdir, arg);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../ioLibrary_Driver/Internet/FTPServer/ftpd.c: In function 'fsprintf':
+../ioLibrary_Driver/Internet/FTPServer/ftpd.c:130:9: warning: 'i' is used uninitialized in this function [-Wuninitialized]
+  130 |  return i;
+      |         ^
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.d" -MT"Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.o"
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32l152retx.d" -MT"Core/Startup/startup_stm32l152retx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Startup/startup_stm32l152retx.o" "../Core/Startup/startup_stm32l152retx.s"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32l1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l1xx_hal_msp.d" -MT"Core/Src/stm32l1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32l1xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32l1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32l1xx_it.d" -MT"Core/Src/stm32l1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32l1xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32l1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L152xE -c -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet" -I../Core/Inc -I"E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/ioLibrary_Driver/Ethernet/W5100" -I../Drivers/STM32L1xx_HAL_Driver/Inc -I../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/system_stm32l1xx.d" -MT"Core/Src/system_stm32l1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/system_stm32l1xx.o"
+arm-none-eabi-gcc -o "Test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\ECOLE\MASTER\Realisation systeme\STM32\Github\STM32_2022_26\Prog central Leo\Test\STM32L152RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+c:\st\stm32cubeide_1.9.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\bin\ld.exe: ./ioLibrary_Driver/Internet/FTPServer/ftpd.o:E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/Debug/../ioLibrary_Driver/Internet/FTPServer/ftpd.c:95: multiple definition of `remote_ip'; ./ioLibrary_Driver/Internet/FTPClient/ftpc.o:E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/Debug/../ioLibrary_Driver/Internet/FTPClient/ftpc.c:3: first defined here
+c:\st\stm32cubeide_1.9.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\bin\ld.exe: ./ioLibrary_Driver/Internet/FTPServer/ftpd.o:E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/Debug/../ioLibrary_Driver/Internet/FTPServer/ftpd.c:96: multiple definition of `remote_port'; ./ioLibrary_Driver/Internet/FTPClient/ftpc.o:E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/Debug/../ioLibrary_Driver/Internet/FTPClient/ftpc.c:4: first defined here
+c:\st\stm32cubeide_1.9.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\bin\ld.exe: ./ioLibrary_Driver/Internet/FTPServer/ftpd.o:E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/Debug/../ioLibrary_Driver/Internet/FTPServer/ftpd.c:97: multiple definition of `local_ip'; ./ioLibrary_Driver/Internet/FTPClient/ftpc.o:E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/Debug/../ioLibrary_Driver/Internet/FTPClient/ftpc.c:5: first defined here
+c:\st\stm32cubeide_1.9.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\bin\ld.exe: ./ioLibrary_Driver/Internet/FTPServer/ftpd.o:E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/Debug/../ioLibrary_Driver/Internet/FTPServer/ftpd.c:98: multiple definition of `local_port'; ./ioLibrary_Driver/Internet/FTPClient/ftpc.o:E:/ECOLE/MASTER/Realisation systeme/STM32/Github/STM32_2022_26/Prog central Leo/Test/Debug/../ioLibrary_Driver/Internet/FTPClient/ftpc.c:6: first defined here
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:82: Test.elf] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+
+20:29:37 Build Failed. 5 errors, 50 warnings. (took 1s.919ms)
+

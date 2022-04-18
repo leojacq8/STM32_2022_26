@@ -1,6 +1,5 @@
-../Core/Src/main.c:75:6:HAL_UART_RxCpltCallback	16	static
-../Core/Src/main.c:83:6:rx_cb_USART_1	8	static
-../Core/Src/main.c:88:6:rx_cb_USART_4	8	static
-../Core/Src/main.c:104:5:main	496	static
-../Core/Src/main.c:393:6:SystemClock_Config	80	static
-../Core/Src/main.c:440:6:Error_Handler	4	static,ignoring_inline_asm
+../Core/Src/main.c:77:6:HAL_UART_RxCpltCallback	24	static
+../Core/Src/main.c:87:6:rx_cb_USART_4	8	static
+../Core/Src/main.c:103:5:main	400	static
+../Core/Src/main.c:438:6:SystemClock_Config	80	static
+../Core/Src/main.c:487:6:Error_Handler	4	static,ignoring_inline_asm

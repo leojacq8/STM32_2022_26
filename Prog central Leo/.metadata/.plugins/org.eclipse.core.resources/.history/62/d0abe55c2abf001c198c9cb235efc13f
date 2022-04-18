@@ -28,6 +28,7 @@
 /* USER CODE BEGIN Includes */
 
 #include <string.h>
+#include <stdlib.h>
 #include "stdio.h"
 #include "lib_lcd.h"
 #include "DHT22.h"
@@ -59,9 +60,10 @@ DMA_HandleTypeDef hdma_usart4_rx;
 rgb_lcd rgbData;
 
 static struct DHT22 DHT22_1;
-static uint8_t device_ID[] = "001";
-static uint8_t DMA_buff[DMA_SIZE] = "";
-static uint8_t USART1_BUFFER[USART1_BUFFER_SIZE] = "";
+static uint8_t USART1_BUFFER[USART1_BUFFER_SIZE] 	= "";
+static uint8_t temp_string[DMA_SIZE] 				= "";
+static uint8_t DMA_buff[DMA_SIZE] 					= "";
+static uint8_t device_ID[] 							= "000";
 //static uint8_t USART4_BUFFER[256];
 
 static enum STATE        fsm_state;
@@ -74,16 +76,13 @@ void SystemClock_Config(void);
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-    set_dma_irq(1);
+	set_dma_irq(1);
+	memcpy(temp_string,DMA_buff,sizeof(DMA_buff));
     HAL_UART_Receive_DMA(&huart4, DMA_buff, DMA_SIZE);
 }
 
 
 //CallBack function for IRQ
-void rx_cb_USART_1()
-{
-	set_usar1_irq(1);
-}
 
 void rx_cb_USART_4()
 {
@@ -104,16 +103,21 @@ void rx_cb_USART_4()
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	  char *strToken					= NULL;
-	  uint8_t data_extract_temp[100] 	= "";
-	  uint8_t temp_string[128] 			= "";
-	  uint8_t send_buffer[100] 			= "";
-	  uint8_t temp[128] 				= "";
-	  uint8_t extract_data 				= 0;
-	  uint8_t data_ok 					= 0;
-	  uint8_t get_try 					= 0;
-	  uint8_t lenght 					= 0;
-	  uint32_t	wd_timer				= 0;
+  char *strToken					= NULL;
+
+  struct Time_str date;
+
+  uint8_t data_extract_temp[100] 	= "";
+  uint8_t send_buffer[100] 			= "";
+  uint8_t extract_data 				= 0;
+  uint8_t check_sscanf 				= 0;
+  uint8_t device_updt 				= 0;
+  uint8_t to_update 				= 0;
+  uint8_t temp[128] 				= "";
+  uint8_t get_try 					= 0;
+  uint8_t time_ok 					= 0;
+  uint8_t data_ok 					= 0;
+  uint8_t lenght 					= 0;
 
   /* USER CODE END 1 */
 
@@ -138,8 +142,8 @@ int main(void)
   MX_I2C1_Init();
   MX_TIM2_Init();
   MX_USART1_UART_Init();
-  MX_DMA_Init();
   MX_UART4_Init();
+  MX_DMA_Init();
   /* USER CODE BEGIN 2 */
 
   /*Timer init*/
@@ -149,12 +153,13 @@ int main(void)
   DHT22_Init(&DHT22_1, DHT22_PORT, DHT22_PIN);
 
   /*Activate DMA on UART2*/
+
   HAL_UART_Receive_DMA(&huart4, DMA_buff, DMA_SIZE);
-
-  //HAL_UART_Receive_IT(&huart4, DMA_buff, 12);
-
   /*Enable IRQ on UART1*/
-  USART_Enable_IT(&huart1);
+
+  //USART_Enable_IT(&huart4);
+
+  //HAL_UART_Receive_IT(&huart1, USART1_BUFFER, 3);
 
   /*First sequence of LCD*/
   lcd_init(&hi2c1, &rgbData);
@@ -164,7 +169,6 @@ int main(void)
   lcd_position(&hi2c1,0,0);
   HAL_Delay(10);
   lcd_print(&hi2c1,"Starting...");
-
 
   /* USER CODE END 2 */
 
@@ -180,17 +184,12 @@ int main(void)
 	          /************************************/
 	          case ST_IDLE:
 
-	        	 // memset(send_buffer,0, sizeof(send_buffer));
-	        	  //HAL_UART_Receive_DMA (&huart1, DMA_buff, 12);
-	        	 /* HAL_UART_Receive(&huart1, DMA_buff, 10, 5000);*/
-	        	  //HAL_Delay(2000);
+				 memset(USART1_BUFFER, 0, sizeof(USART1_BUFFER));
+				 memset(send_buffer,0, sizeof(send_buffer));
+  				 memset(temp,0,sizeof(temp));
 
-	        	  //HAL_UART_Receive(&huart2,USART2_BUFFER, strlen((char *)USART2_BUFFER), 5000);
-
-				   HAL_Delay(2000);
-			      //fsm_state = ST_CHECK_DMA;
-		    	  fsm_state = ST_GET_DATA;
-	        	  break;
+			     fsm_state = ST_GET_DATA;
+	        	 break;
 
 			 /***********************************/
 			 /*				SEND DATA			*/
@@ -200,13 +199,11 @@ int main(void)
 				 if(get_dma_irq() == 1)
 				 {
 					    set_dma_irq(0);
-						memcpy(temp_string,DMA_buff,sizeof(DMA_buff));
 
 						strToken = strtok((char*) temp_string,"$");
 
 						while (( strToken != NULL) && (extract_data<DMA_MAX_DATA))
 						{
-							memset(data_extract_temp,0,sizeof(data_extract_temp));
 
 							lenght = strlen(strToken);
 
@@ -216,12 +213,21 @@ int main(void)
 							}
 							if (lenght == DATA_SIZE)
 							{
+								check_sscanf = sscanf(strToken, "&i=%*d&u=%c=%*s",&device_updt);
+								if(check_sscanf == 1)
+								{
+									if(device_updt == 1)
+									{
+										to_update = 1;
+									}
+								}
+								memset(data_extract_temp,0,sizeof(data_extract_temp));
 								strcat((char *)data_extract_temp,",$");
 
 					        	memset(temp,0, sizeof(temp));
-					        	memcpy(temp,strToken,lenght);
-					        	temp[DATA_SIZE-1] = 0;
-					        	temp[DATA_SIZE-2] = 0;
+					        	memcpy(temp,strToken,lenght-2);
+					        	/*temp[DATA_SIZE-1] = 0;
+					        	temp[DATA_SIZE-2] = 0;*/
 								strcat((char *)data_extract_temp,(char *)temp);
 
 								strToken = strtok( NULL, "$" );
@@ -241,7 +247,7 @@ int main(void)
 				 else
 				 {
 					 HAL_Delay(1000);
-			    	fsm_state = ST_CHECK_DMA;
+			    	 fsm_state = ST_CHECK_DMA;
 			         break;
 				 }
 
@@ -309,12 +315,15 @@ int main(void)
 			 /***********************************/
 			 case ST_SEND_DATA:
 
-				 memset(send_buffer,0, sizeof(send_buffer));
 	        	 strcat((char *)send_buffer,"$");
 
 	        	 memset(temp,0, sizeof(temp));
 	        	 sprintf((char *)temp,"&i=%s", device_ID);
 	        	 strcat((char *)send_buffer,(char *)temp);
+
+	        	// memset(temp,0, sizeof(temp));
+	        	 //sprintf((char *)temp,"&i=%s", device_ID);
+	        	 strcat((char *)send_buffer,(char *)"&u=1");
 
 	        	 memset(temp,0, sizeof(temp));
 	        	 sprintf((char *)temp,"&t=%.2f", DHT22_1.temperature);
@@ -325,30 +334,71 @@ int main(void)
 	        	 strcat((char *)send_buffer,(char *)temp);
 
 	        	 strcat((char *)send_buffer,(char *)data_extract_temp);
+
 	        	 strcat((char *)send_buffer,"\r\n");
 
+
 				 memset(USART1_BUFFER, 0, sizeof(USART1_BUFFER));
-
-				 set_usar1_irq(0);
-				 HAL_UART_Transmit(&huart1,(uint8_t*)send_buffer, strlen((char *)send_buffer), 100);
-				 while (get_usar1_irq()!=1 && wd_timer <= 500)
+				 HAL_UART_Transmit(&huart1,(uint8_t*)send_buffer, strlen((char *)send_buffer), 200);
+				 to_update = 1;
+				 if(to_update == 1)
 				 {
-				 	HAL_Delay(10);
-				 	wd_timer++;
-				 }
-				 if (get_usar1_irq() ==1)
-				 {
-					HAL_Delay(30);
-					HAL_UART_Receive(&huart1,(uint8_t*)USART1_BUFFER, strlen((char *)USART1_BUFFER), 10);
-				 }
+					 HAL_UART_Receive(&huart1,(uint8_t*)USART1_BUFFER, USART1_BUFFER_SIZE - 1, 4000);
 
-		    	 fsm_state = ST_CHECK_RESP;
-		         break;
+			    	 fsm_state = ST_CHECK_RESP;
+			         break;
+				 }
+				 else
+				 {
+			    	 fsm_state = ST_IDLE;
+			         break;
+				 }
 
 			 /***********************************/
 			 /*				CHECK RESP			*/
 			 /***********************************/
 			 case ST_CHECK_RESP:
+
+				  check_sscanf = sscanf((char*)USART1_BUFFER, "%d/%d/%d-%d:%d:%d",&date.day, &date.month,&date.year,&date.hour,&date.minute,&date.second);
+				  time_ok = 0;
+
+				  if(check_sscanf == 6)
+				  {
+
+					  if(date.year >= DEFAULT_YEAR)
+					  {
+						  if((date.month > 0) && (date.month <= 12))
+						  {
+							  if((date.day > 0) && (date.day <= 31))
+							  {
+								  if((date.hour >= 0) && (date.hour < 24))
+								  {
+									  if((date.minute >= 0) && (date.minute < 60))
+									  {
+										  if((date.second >= 0) && (date.second < 60))
+										  {
+											  time_ok = 1;
+										  }
+									  }
+								  }
+							  }
+						  }
+					  }
+				  }
+
+				  if(time_ok == 0)
+				  {
+					  memset(USART1_BUFFER, 0, sizeof(USART1_BUFFER));
+
+					  date.year = DEFAULT_YEAR;
+					  date.month = DEFAULT_MONTH;
+					  date.day = DEFAULT_DAY;
+					  date.hour = DEFAULT_HOUR;
+					  date.minute = DEFAULT_MINUTE;
+					  date.second = DEFAULT_SECOND;
+
+					  sprintf((char*)USART1_BUFFER,"%d/%d/%d-%d:%d:%d", date.day, date.month, date.year, date.hour, date.minute, date.second);
+				  }
 
 		    	  fsm_state = ST_UPDATE;
 		          break;
@@ -358,16 +408,11 @@ int main(void)
 			 /***********************************/
 			 case ST_UPDATE:
 
-		    	  fsm_state = ST_SLEEP;
-		          break;
 
-			 /***********************************/
-			 /*				SLEEP       		*/
-			 /***********************************/
-			 case ST_SLEEP:
+				 HAL_UART_Transmit(&huart4,(uint8_t*)USART1_BUFFER, strlen((char *)USART1_BUFFER), 100);
 
-		    	  fsm_state = ST_IDLE;
-		          break;
+				 fsm_state = ST_IDLE;
+				 break;
 
 			 /***********************************/
 			 /*				default       		*/
@@ -398,6 +443,7 @@ void SystemClock_Config(void)
   /** Configure the main internal regulator output voltage
   */
   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
@@ -412,6 +458,7 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+
   /** Initializes the CPU, AHB and APB buses clocks
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
@@ -464,4 +511,3 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
-

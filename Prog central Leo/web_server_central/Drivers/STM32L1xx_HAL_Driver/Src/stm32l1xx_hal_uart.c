@@ -3619,7 +3619,6 @@ static HAL_StatusTypeDef UART_Receive_IT(UART_HandleTypeDef *huart)
 #else
         /*Call legacy weak Rx Event callback*/
         HAL_UARTEx_RxEventCallback(huart, huart->RxXferSize);
-
 #endif
       }
       else

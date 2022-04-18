@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (9-2020-q2-update)
+# Toolchain: GNU Tools for STM32 (10.3-2021.10)
 ################################################################################
 
 -include ../makefile.init
@@ -43,14 +43,14 @@ BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ART
 EXECUTABLES += \
 web_server_central.elf \
 
+MAP_FILES += \
+web_server_central.map \
+
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
 web_server_central.list \
-
-OBJCOPY_BIN += \
-web_server_central.bin \
 
 
 # All Target
@@ -60,7 +60,7 @@ all: main-build
 main-build: web_server_central.elf secondary-outputs
 
 # Tool invocations
-web_server_central.elf: $(OBJS) $(USER_OBJS) E:\ECOLE\MASTER\Realisation\ systeme\STM32\Github\STM32_2022_26\Prog\ central\ Leo\web_server_central\STM32L152RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+web_server_central.elf web_server_central.map: $(OBJS) $(USER_OBJS) E:\ECOLE\MASTER\Realisation\ systeme\STM32\Github\STM32_2022_26\Prog\ central\ Leo\web_server_central\STM32L152RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	arm-none-eabi-gcc -o "web_server_central.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"E:\ECOLE\MASTER\Realisation systeme\STM32\Github\STM32_2022_26\Prog central Leo\web_server_central\STM32L152RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="web_server_central.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
@@ -75,17 +75,12 @@ web_server_central.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DE
 	@echo 'Finished building: $@'
 	@echo ' '
 
-web_server_central.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "web_server_central.bin"
-	@echo 'Finished building: $@'
-	@echo ' '
-
 # Other Targets
 clean:
-	-$(RM) default.size.stdout web_server_central.bin web_server_central.elf web_server_central.list
+	-$(RM) default.size.stdout web_server_central.elf web_server_central.list web_server_central.map
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'

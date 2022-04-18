@@ -58,4 +58,4 @@
 ../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c:3489:26:UART_Transmit_IT	24	static
 ../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c:3529:26:UART_EndTransmit_IT	16	static
 ../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c:3554:26:UART_Receive_IT	32	static
-../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c:3653:13:UART_SetConfig	24	static
+../Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c:3652:13:UART_SetConfig	24	static

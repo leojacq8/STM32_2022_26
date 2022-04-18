@@ -59,7 +59,6 @@
 /* External variables --------------------------------------------------------*/
 extern DMA_HandleTypeDef hdma_uart4_rx;
 extern UART_HandleTypeDef huart4;
-extern UART_HandleTypeDef huart1;
 /* USER CODE BEGIN EV */
 
 /* USER CODE END EV */
@@ -203,70 +202,6 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
-  * @brief This function handles USART1 global interrupt.
-  */
-void USART1_IRQHandler(void)
-{
-  /* USER CODE BEGIN USART1_IRQn 0 */
-	  uint32_t isrflags   = READ_REG(huart1.Instance->SR);
-	  uint32_t cr1its     = READ_REG(huart1.Instance->CR1);
-	  uint32_t cr3its     = READ_REG(huart1.Instance->CR3);
-	  uint32_t errorflags = 0x00U;
-
-	  /* If no error occurs */
-      errorflags = (isrflags & (uint32_t)(USART_SR_PE | USART_SR_FE | USART_SR_ORE | USART_SR_NE));
-	  if (errorflags == RESET)
-	  {
-   	       USART1_SendIT(&huart1);
-	  }
-
-	  if ((errorflags != RESET) && (((cr3its & USART_CR3_EIE) != RESET) || ((cr1its & (USART_CR1_RXNEIE | USART_CR1_PEIE)) != RESET)))
-	   {
-	     /* UART parity error interrupt occurred ----------------------------------*/
-	     if (((isrflags & USART_SR_PE) != RESET) && ((cr1its & USART_CR1_PEIE) != RESET))
-	     {
-	       huart1.ErrorCode |= HAL_UART_ERROR_PE;
-	     }
-
-	     /* UART noise error interrupt occurred -----------------------------------*/
-	     if (((isrflags & USART_SR_NE) != RESET) && ((cr3its & USART_CR3_EIE) != RESET))
-	     {
-	       huart1.ErrorCode |= HAL_UART_ERROR_NE;
-	     }
-
-	     /* UART frame error interrupt occurred -----------------------------------*/
-	     if (((isrflags & USART_SR_FE) != RESET) && ((cr3its & USART_CR3_EIE) != RESET))
-	     {
-	       huart1.ErrorCode |= HAL_UART_ERROR_FE;
-	     }
-
-	     /* UART Over-Run interrupt occurred --------------------------------------*/
-	     if (((isrflags & USART_SR_ORE) != RESET) && (((cr1its & USART_CR1_RXNEIE) != RESET) || ((cr3its & USART_CR3_EIE) != RESET)))
-	     {
-	       huart1.ErrorCode |= HAL_UART_ERROR_ORE;
-	     }
-
-	     /* Call UART Error Call back function if need be --------------------------*/
-	     if (huart1.ErrorCode != HAL_UART_ERROR_NONE)
-	     {
-	       /* UART in mode Receiver -----------------------------------------------*/
-	       if (((isrflags & USART_SR_RXNE) != RESET) && ((cr1its & USART_CR1_RXNEIE) != RESET))
-	       {
-	    	   USART1_SendIT(&huart1);
-	       }
-	       huart1.ErrorCode = HAL_UART_ERROR_NONE;
-	     }
-	   } /* End if some error occurs */
-
-	  USART_Enable_IT(&huart1);
-  /* USER CODE END USART1_IRQn 0 */
-  //HAL_UART_IRQHandler(&huart1);
-  /* USER CODE BEGIN USART1_IRQn 1 */
-
-  /* USER CODE END USART1_IRQn 1 */
-}
-
-/**
   * @brief This function handles UART4 global interrupt.
   */
 void UART4_IRQHandler(void)
@@ -297,4 +232,3 @@ void DMA2_Channel3_IRQHandler(void)
 /* USER CODE BEGIN 1 */
 
 /* USER CODE END 1 */
-

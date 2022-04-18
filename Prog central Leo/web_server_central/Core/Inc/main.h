@@ -40,7 +40,14 @@ extern "C" {
 #define DATA_SIZE 24 //&i=001&t=20.50&h=60.41\r\n  without the $
 #define RAW_DATA_SIZE 25
 #define DMA_MAX_DATA DMA_SIZE/DATA_SIZE //$&i=001&t=20.50&h=60.41\r\n
-#define USART1_BUFFER_SIZE 256
+#define USART1_BUFFER_SIZE 20
+
+#define DEFAULT_YEAR 2000
+#define DEFAULT_MONTH 6
+#define DEFAULT_DAY 19
+#define DEFAULT_HOUR 21
+#define DEFAULT_MINUTE 17
+#define DEFAULT_SECOND 00
 
 enum STATE
 {
@@ -51,6 +58,16 @@ enum STATE
     ST_CHECK_RESP,
     ST_SLEEP,
     ST_UPDATE
+};
+
+ struct Time_str{
+
+    int day;
+    int month;
+    int year;
+    int hour;
+    int minute;
+    int second;
 };
 
 
