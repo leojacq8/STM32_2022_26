@@ -78,6 +78,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
 	set_dma_irq(1);
 	memcpy(temp_string,DMA_buff,sizeof(DMA_buff));
+	memset(DMA_buff,0,sizeof(DMA_buff));
     HAL_UART_Receive_DMA(&huart4, DMA_buff, DMA_SIZE);
 }
 
@@ -142,8 +143,8 @@ int main(void)
   MX_I2C1_Init();
   MX_TIM2_Init();
   MX_USART1_UART_Init();
-  MX_UART4_Init();
   MX_DMA_Init();
+  MX_UART4_Init();
   /* USER CODE BEGIN 2 */
 
   /*Timer init*/
@@ -152,14 +153,9 @@ int main(void)
   /*DHT22 init*/
   DHT22_Init(&DHT22_1, DHT22_PORT, DHT22_PIN);
 
-  /*Activate DMA on UART2*/
+  /*Activate DMA on UART4*/
 
   HAL_UART_Receive_DMA(&huart4, DMA_buff, DMA_SIZE);
-  /*Enable IRQ on UART1*/
-
-  //USART_Enable_IT(&huart4);
-
-  //HAL_UART_Receive_IT(&huart1, USART1_BUFFER, 3);
 
   /*First sequence of LCD*/
   lcd_init(&hi2c1, &rgbData);
@@ -188,6 +184,7 @@ int main(void)
 				 memset(send_buffer,0, sizeof(send_buffer));
   				 memset(temp,0,sizeof(temp));
 
+			     //fsm_state = ST_CHECK_DMA;
 			     fsm_state = ST_CHECK_DMA;
 	        	 break;
 
@@ -222,7 +219,7 @@ int main(void)
 									}
 								}
 								memset(data_extract_temp,0,sizeof(data_extract_temp));
-								strcat((char *)data_extract_temp,",$");
+								strcat((char *)data_extract_temp,"$");
 
 					        	memset(temp,0, sizeof(temp));
 					        	memcpy(temp,strToken,lenght-2);
@@ -323,7 +320,7 @@ int main(void)
 
 	        	// memset(temp,0, sizeof(temp));
 	        	 //sprintf((char *)temp,"&i=%s", device_ID);
-	        	 strcat((char *)send_buffer,(char *)"&u=1");
+	        	// strcat((char *)send_buffer,(char *)"&u=1");
 
 	        	 memset(temp,0, sizeof(temp));
 	        	 sprintf((char *)temp,"&t=%.2f", DHT22_1.temperature);
@@ -333,7 +330,7 @@ int main(void)
 	        	 sprintf((char *)temp,"&h=%.2f", DHT22_1.humidity);
 	        	 strcat((char *)send_buffer,(char *)temp);
 
-	        	 strcat((char *)send_buffer,(char *)data_extract_temp);
+	        	 strcat((char *)send_buffer,(char *)temp_string);
 
 	        	 strcat((char *)send_buffer,"\r\n");
 

@@ -17,16 +17,18 @@ SoftwareSerial mySerial(2, 3);
 
 char temp_uart[MAX_BYTE_IN_FRAME] = "";
 char temp[DATA_SIZE] = "";
-
 struct Device {
   char id[4];
   char temp[6];
   char hum[6];
+  unsigned long last_time;
 };
 
 int id_rec = 0;
 char temp_rec[6];
 char hum_rec[6];
+
+uint16_t trash;
 
 Device all_device[NB_DEVICE];
 
@@ -75,7 +77,7 @@ void loop() {
           client.println("HTTP/1.1 200 OK");
           client.println("Content-Type: text/html");
           client.println("Connection: close");
-          client.println("Refresh: 5");
+          client.println("Refresh: 1");
           client.println();
           client.println("<!DOCTYPE HTML>");
           client.println("<html>");
@@ -95,8 +97,15 @@ void loop() {
             client.print(all_device[i].temp);
             client.print(" C / ");
             client.print(all_device[i].hum);
-            client.println(" % </p>");
+            client.println(" %");
+            client.print("    Derniere donnees :");
+            client.print(all_device[i].last_time);
+            client.print(" ms");
+            client.println("</p>");
           }
+          client.print("      <p> temp mcu : ");
+          client.print(millis());
+          client.println(" ms </p>");
           client.println("         </body>");
           client.println("</html>");
           break;
@@ -109,6 +118,7 @@ void loop() {
   {
     memset(temp_uart, 0, sizeof(temp_uart));
     mySerial.readBytes(temp_uart, MAX_BYTE_IN_FRAME);
+    Serial.println(temp_uart);
 
     char * strToken = strtok(temp_uart, "$");
 
@@ -119,23 +129,30 @@ void loop() {
       memset(temp_rec, 0, sizeof(temp_rec));
       memset(hum_rec, 0, sizeof(hum_rec));
 
-      check_sscanf = sscanf(strToken, "&i=%d&u=%d&t=%[^&]&h=%[^\r]\r\n", &id_rec, &updt_temp, &temp_rec, &hum_rec);
+      check_sscanf = sscanf(strToken, "&i=%d&t=%[^&]&h=%s", &id_rec, &temp_rec, &hum_rec);
 
-      if (check_sscanf == 4)
+      if (check_sscanf == 3)
       {
         memcpy(all_device[id_rec].temp, temp_rec, sizeof(temp_rec));
         memcpy(all_device[id_rec].hum, hum_rec, sizeof(hum_rec));
-        if (updt_temp == 1)
-        {
-          to_update = 1;
-        }
+        all_device[id_rec].last_time = millis();
       }
       strToken = strtok( NULL, "$" );
     }
-    if (to_update == 1)
+  }
+  if (Serial.available())
+  {
+    memset(temp_uart, 0, sizeof(temp_uart));
+    trash = 0;
+
+    mySerial.readBytes(temp_uart, 20);
+    check_sscanf = sscanf(temp_uart, "%hu/%hu/%hu-%hu:%hu:%hu", &trash, &trash, &trash, &trash, &trash, &trash);
+
+    if (check_sscanf == 6)
     {
-      Serial.write("09/04/2022-12:30:00", strlen("09/04/2022-12:30:00"));
-      mySerial.write("09/04/2022-12:30:00", strlen("09/04/2022-12:30:00"));
+      Serial.write(temp_uart, strlen(temp_uart));
+      mySerial.write(temp_uart, strlen(temp_uart));
     }
+
   }
 }
