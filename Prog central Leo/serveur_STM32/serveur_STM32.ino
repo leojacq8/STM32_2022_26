@@ -1,12 +1,12 @@
 #include <SPI.h>
 #include <Ethernet.h>
 #include <SoftwareSerial.h>
+#include <TimeLib.h>
 
 #define NB_DEVICE 3
-#define MAX_DATA_IN_FRAME 10
+#define MAX_DATA_IN_FRAME 5
 #define DATA_SIZE 29
 #define MAX_BYTE_IN_FRAME DATA_SIZE*MAX_DATA_IN_FRAME
-#define NTP_PACKET_SIZE 48
 
 //parametres IP carte
 byte mac[] = {0x90, 0xA2, 0xDA, 0x0F, 0xDF, 0xAB};
@@ -28,13 +28,9 @@ int id_rec = 0;
 char temp_rec[6];
 char hum_rec[6];
 
-uint16_t trash;
-
 Device all_device[NB_DEVICE];
 
 uint8_t check_sscanf = 0;
-int updt_temp = 0;
-uint8_t to_update = 0;
 
 void setup() {
 
@@ -53,9 +49,7 @@ void setup() {
   for (uint8_t i; i < NB_DEVICE; i ++)
   {
     memset(all_device[i].id, '0', sizeof(all_device[i].id) - 1);
-    //memset(temp, 0, sizeof(temp));
     sprintf(all_device[i].id, "%d", i);
-    //memcpy(all_device[i].id, temp, strlen(temp));
 
     memcpy(all_device[i].temp, "none", strlen("none"));
     memcpy(all_device[i].hum, "none", strlen("none"));
@@ -77,7 +71,7 @@ void loop() {
           client.println("HTTP/1.1 200 OK");
           client.println("Content-Type: text/html");
           client.println("Connection: close");
-          client.println("Refresh: 1");
+          client.println("Refresh: 5");
           client.println();
           client.println("<!DOCTYPE HTML>");
           client.println("<html>");
@@ -117,42 +111,28 @@ void loop() {
   if (mySerial.available())
   {
     memset(temp_uart, 0, sizeof(temp_uart));
+	//Lecture des données série
     mySerial.readBytes(temp_uart, MAX_BYTE_IN_FRAME);
-    Serial.println(temp_uart);
 
     char * strToken = strtok(temp_uart, "$");
 
-    uint8_t updt_tmp = 0;
-
+	//Découpage de la trame pour obteniri chaque donnée de dispositif
     while ( strToken != NULL )
     {
       memset(temp_rec, 0, sizeof(temp_rec));
       memset(hum_rec, 0, sizeof(hum_rec));
 
-      check_sscanf = sscanf(strToken, "&i=%d&t=%[^&]&h=%s", &id_rec, &temp_rec, &hum_rec);
+	  //Extraction des données de chaque trame
+      check_sscanf = sscanf(strToken, "&i=%d&u=%*d&t=%[^&]&h=%s", &id_rec, &temp_rec, &hum_rec);
 
       if (check_sscanf == 3)
       {
+	    //Mise à jour des structure de chaque dispositif
         memcpy(all_device[id_rec].temp, temp_rec, sizeof(temp_rec));
         memcpy(all_device[id_rec].hum, hum_rec, sizeof(hum_rec));
         all_device[id_rec].last_time = millis();
       }
       strToken = strtok( NULL, "$" );
     }
-  }
-  if (Serial.available())
-  {
-    memset(temp_uart, 0, sizeof(temp_uart));
-    trash = 0;
-
-    mySerial.readBytes(temp_uart, 20);
-    check_sscanf = sscanf(temp_uart, "%hu/%hu/%hu-%hu:%hu:%hu", &trash, &trash, &trash, &trash, &trash, &trash);
-
-    if (check_sscanf == 6)
-    {
-      Serial.write(temp_uart, strlen(temp_uart));
-      mySerial.write(temp_uart, strlen(temp_uart));
-    }
-
   }
 }

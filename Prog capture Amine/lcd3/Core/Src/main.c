@@ -99,10 +99,8 @@ int main(void)
 	  uint8_t temp[128] = "";
 
 	  char res [10];
-	  	  float temperature=0;
-	      float humidity=0;
-	  //uint8_t i = 0;
-	  //uint8_t data_extract_temp[100];
+	  float temperature=0;
+	  float humidity=0;
 
   /* USER CODE END 1 */
 
@@ -140,16 +138,8 @@ int main(void)
   lcd_print(&hi2c1,"Humidite: ");// ecris "Humidité " sur le lcd
   reglagecouleur(50,50,9);
 
-
   TMP_init(hi2c1);
-
-
-
-
   /* USER CODE END 2 */
-
-
-
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
@@ -158,7 +148,6 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-
 
 	  	  Temp_read(&temperature, &humidity);
 
@@ -171,8 +160,8 @@ int main(void)
 	  	  lcd_print(&hi2c1,res);
 
 
-	  	 print("la temperature est =%f\n\r ", temperature);
-	  	 print("l'humidité est =%f\n\r ", humidity);
+	  	  print("la temperature est =%f\n\r ", temperature);
+	  	  print("l'humidité est =%f\n\r ", humidity);
 	  	  HAL_Delay(1000);
 
 	  	/* -------- Envoi de données via XBEE--------*/
@@ -197,11 +186,6 @@ int main(void)
           sprintf((char *)temp,"&h=%.2f", humidity);
           strcat((char *)send_buffer,(char *)temp);
           strcat((char *)send_buffer,(char *)"\r\n");
-
-
-
-	 // HAL_UART_Transmit(&huart4,(uint8_t*)"Salut",strlen("Salut"),100);
-
 
           HAL_UART_Transmit(&huart4,(uint8_t*)send_buffer, strlen((char *)send_buffer),100);
 

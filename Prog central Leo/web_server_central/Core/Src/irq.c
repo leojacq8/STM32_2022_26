@@ -9,9 +9,9 @@
 #include "stm32l1xx_hal_def.h"
 
 static uint8_t RX_DMA_irq	= 0;
+static uint8_t UART1_irq	= 0;
 
-/*uart section*/
-/*acc section*/
+/*dma section*/
 void set_dma_irq(uint8_t value)
 {
     uint32_t prim;
@@ -43,3 +43,37 @@ uint8_t get_dma_irq()
 
 	return ret;
 }
+
+/*uart1 section*/
+void set_uart1_irq(uint8_t value)
+{
+    uint32_t prim;
+    prim = __get_PRIMASK();
+
+    __disable_irq();
+
+    UART1_irq	= value;
+
+    if (!prim) {
+          __enable_irq();
+    }
+}
+
+uint8_t get_uart1_irq()
+{
+	uint8_t ret = 0;
+    uint32_t prim;
+
+    prim = __get_PRIMASK();
+    __disable_irq();
+
+	ret	= UART1_irq;
+
+
+    if (!prim) {
+          __enable_irq();
+    }
+
+	return ret;
+}
+

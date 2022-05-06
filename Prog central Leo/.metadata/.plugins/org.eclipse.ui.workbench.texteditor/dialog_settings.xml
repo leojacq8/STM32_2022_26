@@ -6,8 +6,13 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="remote_ip"/>
+		<item key="selection" value=""/>
 		<list key="findhistory">
+			<item value="RAW_DATA_SIZE"/>
+			<item value="device_updt"/>
+			<item value="extract_data"/>
+			<item value="temp"/>
+			<item value="data_extract_temp"/>
 			<item value="LISTEN_ERR_MSG"/>
 			<item value="remote_ip"/>
 			<item value="GREETING_MSG"/>

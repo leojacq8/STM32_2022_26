@@ -1,2 +1,4 @@
 ../Core/Src/irq.c:15:6:set_dma_irq	24	static,ignoring_inline_asm
 ../Core/Src/irq.c:29:9:get_dma_irq	24	static,ignoring_inline_asm
+../Core/Src/irq.c:48:6:set_uart1_irq	24	static,ignoring_inline_asm
+../Core/Src/irq.c:62:9:get_uart1_irq	24	static,ignoring_inline_asm

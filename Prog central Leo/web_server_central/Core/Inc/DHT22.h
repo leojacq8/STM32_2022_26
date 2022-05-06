@@ -1,7 +1,7 @@
 /*
- * DHT22.c
+ * DHT22.h
  *
- *  Created on: Jan 30, 2022
+ *  Created on: Apr 21, 2022
  *      Author: leojacq
  */
 
@@ -9,6 +9,7 @@
 #ifndef INC_DHT22_H_
 #define INC_DHT22_H_
 
+#include "main.h"
 #include "tim.h"
 
  struct DHT22{

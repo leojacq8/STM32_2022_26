@@ -31,18 +31,21 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <string.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include "stdio.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
-#define DMA_SIZE 25//100
-#define DATA_SIZE 24 //&i=001&t=20.50&h=60.41\r\n  without the $
-#define RAW_DATA_SIZE 25
-#define DMA_MAX_DATA DMA_SIZE/DATA_SIZE //$&i=001&t=20.50&h=60.41\r\n
-#define USART1_BUFFER_SIZE 20
+#define DATA_SIZE 25 //&i=001&t=20.50&h=60.41\r\n  without the $
+#define DMA_MAX_DATA 2
+#define DMA_SIZE DATA_SIZE*DMA_MAX_DATA
+#define USART1_BUFFER_SIZE 19
+#define MAX_DATA_SEND DMA_SIZE+DATA_SIZE
 
-#define DEFAULT_YEAR 2000
+#define DEFAULT_YEAR 00
 #define DEFAULT_MONTH 6
 #define DEFAULT_DAY 19
 #define DEFAULT_HOUR 21
@@ -58,16 +61,6 @@ enum STATE
     ST_CHECK_RESP,
     ST_SLEEP,
     ST_UPDATE
-};
-
- struct Time_str{
-
-    int day;
-    int month;
-    int year;
-    int hour;
-    int minute;
-    int second;
 };
 
 

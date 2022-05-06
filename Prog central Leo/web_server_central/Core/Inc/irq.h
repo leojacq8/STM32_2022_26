@@ -11,9 +11,13 @@
 #include "main.h"
 #include "usart.h"
 #include "stm32l1xx_hal_def.h"
-/*uart section*/
 
+/*dma section*/
 void set_dma_irq(uint8_t value);
 uint8_t get_dma_irq();
+
+/*uart1 section*/
+void set_uart1_irq(uint8_t value);
+uint8_t get_uart1_irq();
 
 #endif /* INC_IRQ_H_ */

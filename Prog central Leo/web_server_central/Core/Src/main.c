@@ -27,9 +27,6 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
-#include <string.h>
-#include <stdlib.h>
-#include "stdio.h"
 #include "lib_lcd.h"
 #include "DHT22.h"
 #include "irq.h"
@@ -60,11 +57,9 @@ DMA_HandleTypeDef hdma_usart4_rx;
 rgb_lcd rgbData;
 
 static struct DHT22 DHT22_1;
-static uint8_t USART1_BUFFER[USART1_BUFFER_SIZE] 	= "";
-static uint8_t temp_string[DMA_SIZE] 				= "";
-static uint8_t DMA_buff[DMA_SIZE] 					= "";
-static uint8_t device_ID[] 							= "000";
-//static uint8_t USART4_BUFFER[256];
+static uint8_t DMA_BUFFER[DMA_SIZE + 1] 				= "";
+static uint8_t dma_temp[DMA_SIZE + 1] 					= "";
+static uint8_t device_ID[] 								= "000";
 
 static enum STATE        fsm_state;
 
@@ -77,17 +72,9 @@ void SystemClock_Config(void);
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
 	set_dma_irq(1);
-	memcpy(temp_string,DMA_buff,sizeof(DMA_buff));
-	memset(DMA_buff,0,sizeof(DMA_buff));
-    HAL_UART_Receive_DMA(&huart4, DMA_buff, DMA_SIZE);
-}
-
-
-//CallBack function for IRQ
-
-void rx_cb_USART_4()
-{
-    set_dma_irq(1);
+	memcpy(dma_temp,DMA_BUFFER,DMA_SIZE);
+	memset(DMA_BUFFER,0,DMA_SIZE);
+    HAL_UART_Receive_DMA(&huart4, DMA_BUFFER, DMA_SIZE);
 }
 
 /* USER CODE END PFP */
@@ -104,21 +91,15 @@ void rx_cb_USART_4()
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-  char *strToken					= NULL;
+   char *strToken					= NULL;
 
-  struct Time_str date;
-
-  uint8_t data_extract_temp[100] 	= "";
-  uint8_t send_buffer[100] 			= "";
-  uint8_t extract_data 				= 0;
-  uint8_t check_sscanf 				= 0;
-  uint8_t device_updt 				= 0;
-  uint8_t to_update 				= 0;
-  uint8_t temp[128] 				= "";
-  uint8_t get_try 					= 0;
-  uint8_t time_ok 					= 0;
-  uint8_t data_ok 					= 0;
-  uint8_t lenght 					= 0;
+  uint8_t data_extract_temp[MAX_DATA_SEND  + 1] 	= "";
+  uint8_t send_buffer[MAX_DATA_SEND  + 1] 			= "";
+  uint8_t extract_data 								= 0;
+  uint8_t temp[128] 								= "";
+  uint8_t get_try 									= 0;
+  uint8_t data_ok 									= 0;
+  uint8_t lenght 									= 0;
 
   /* USER CODE END 1 */
 
@@ -155,8 +136,8 @@ int main(void)
 
   /*Activate DMA on UART4*/
 
-  HAL_UART_Receive_DMA(&huart4, DMA_buff, DMA_SIZE);
-
+  HAL_UART_Receive_DMA(&huart4, DMA_BUFFER, DMA_SIZE);
+  
   /*First sequence of LCD*/
   lcd_init(&hi2c1, &rgbData);
   HAL_Delay(100);
@@ -180,11 +161,8 @@ int main(void)
 	          /************************************/
 	          case ST_IDLE:
 
-				 memset(USART1_BUFFER, 0, sizeof(USART1_BUFFER));
 				 memset(send_buffer,0, sizeof(send_buffer));
   				 memset(temp,0,sizeof(temp));
-
-			     //fsm_state = ST_CHECK_DMA;
 			     fsm_state = ST_CHECK_DMA;
 	        	 break;
 
@@ -193,12 +171,14 @@ int main(void)
 			 /***********************************/
 			 case ST_CHECK_DMA:
 
+				//attente d'interruption DMA
 				 if(get_dma_irq() == 1)
 				 {
 					    set_dma_irq(0);
 
-						strToken = strtok((char*) temp_string,"$");
+						strToken = strtok((char*) dma_temp,"$");
 
+						//Extraction des données DMA
 						while (( strToken != NULL) && (extract_data<DMA_MAX_DATA))
 						{
 
@@ -210,21 +190,11 @@ int main(void)
 							}
 							if (lenght == DATA_SIZE)
 							{
-								check_sscanf = sscanf(strToken, "&i=%*d&u=%c=%*s",&device_updt);
-								if(check_sscanf == 1)
-								{
-									if(device_updt == 1)
-									{
-										to_update = 1;
-									}
-								}
 								memset(data_extract_temp,0,sizeof(data_extract_temp));
 								strcat((char *)data_extract_temp,"$");
 
 					        	memset(temp,0, sizeof(temp));
 					        	memcpy(temp,strToken,lenght-2);
-					        	/*temp[DATA_SIZE-1] = 0;
-					        	temp[DATA_SIZE-2] = 0;*/
 								strcat((char *)data_extract_temp,(char *)temp);
 
 								strToken = strtok( NULL, "$" );
@@ -243,7 +213,7 @@ int main(void)
 				 }
 				 else
 				 {
-					 HAL_Delay(1000);
+					 HAL_Delay(2000);
 			    	 fsm_state = ST_CHECK_DMA;
 			         break;
 				 }
@@ -257,6 +227,7 @@ int main(void)
 		   			  get_try = 0;
 		   			  data_ok = 0;
 
+					   //Prise de données du capteur
 			    	   while((get_try < 3 ) && (data_ok == 0))
 			    	   {
 
@@ -312,15 +283,14 @@ int main(void)
 			 /***********************************/
 			 case ST_SEND_DATA:
 
+				 //Formatage et envoi du paquet de données à l'arduino
 	        	 strcat((char *)send_buffer,"$");
 
 	        	 memset(temp,0, sizeof(temp));
 	        	 sprintf((char *)temp,"&i=%s", device_ID);
 	        	 strcat((char *)send_buffer,(char *)temp);
 
-	        	// memset(temp,0, sizeof(temp));
-	        	 //sprintf((char *)temp,"&i=%s", device_ID);
-	        	// strcat((char *)send_buffer,(char *)"&u=1");
+	        	// strcat((char *)send_buffer,"&u=0");
 
 	        	 memset(temp,0, sizeof(temp));
 	        	 sprintf((char *)temp,"&t=%.2f", DHT22_1.temperature);
@@ -330,86 +300,15 @@ int main(void)
 	        	 sprintf((char *)temp,"&h=%.2f", DHT22_1.humidity);
 	        	 strcat((char *)send_buffer,(char *)temp);
 
-	        	 strcat((char *)send_buffer,(char *)temp_string);
+	        	 strcat((char *)send_buffer,(char *)data_extract_temp);
 
 	        	 strcat((char *)send_buffer,"\r\n");
 
 
-				 memset(USART1_BUFFER, 0, sizeof(USART1_BUFFER));
-				 HAL_UART_Transmit(&huart1,(uint8_t*)send_buffer, strlen((char *)send_buffer), 200);
-				 to_update = 1;
-				 if(to_update == 1)
-				 {
-					 HAL_UART_Receive(&huart1,(uint8_t*)USART1_BUFFER, USART1_BUFFER_SIZE - 1, 4000);
-
-			    	 fsm_state = ST_CHECK_RESP;
-			         break;
-				 }
-				 else
-				 {
-			    	 fsm_state = ST_IDLE;
-			         break;
-				 }
-
-			 /***********************************/
-			 /*				CHECK RESP			*/
-			 /***********************************/
-			 case ST_CHECK_RESP:
-
-				  check_sscanf = sscanf((char*)USART1_BUFFER, "%d/%d/%d-%d:%d:%d",&date.day, &date.month,&date.year,&date.hour,&date.minute,&date.second);
-				  time_ok = 0;
-
-				  if(check_sscanf == 6)
-				  {
-
-					  if(date.year >= DEFAULT_YEAR)
-					  {
-						  if((date.month > 0) && (date.month <= 12))
-						  {
-							  if((date.day > 0) && (date.day <= 31))
-							  {
-								  if((date.hour >= 0) && (date.hour < 24))
-								  {
-									  if((date.minute >= 0) && (date.minute < 60))
-									  {
-										  if((date.second >= 0) && (date.second < 60))
-										  {
-											  time_ok = 1;
-										  }
-									  }
-								  }
-							  }
-						  }
-					  }
-				  }
-
-				  if(time_ok == 0)
-				  {
-					  memset(USART1_BUFFER, 0, sizeof(USART1_BUFFER));
-
-					  date.year = DEFAULT_YEAR;
-					  date.month = DEFAULT_MONTH;
-					  date.day = DEFAULT_DAY;
-					  date.hour = DEFAULT_HOUR;
-					  date.minute = DEFAULT_MINUTE;
-					  date.second = DEFAULT_SECOND;
-
-					  sprintf((char*)USART1_BUFFER,"%d/%d/%d-%d:%d:%d", date.day, date.month, date.year, date.hour, date.minute, date.second);
-				  }
-
-		    	  fsm_state = ST_UPDATE;
-		          break;
-
-			 /***********************************/
-			 /*				UPDATE				*/
-			 /***********************************/
-			 case ST_UPDATE:
-
-
-				 HAL_UART_Transmit(&huart4,(uint8_t*)USART1_BUFFER, strlen((char *)USART1_BUFFER), 100);
+				 HAL_UART_Transmit(&huart1,(uint8_t*)send_buffer, strlen((char *)send_buffer), 500);
 
 				 fsm_state = ST_IDLE;
-				 break;
+			     break;
 
 			 /***********************************/
 			 /*				default       		*/

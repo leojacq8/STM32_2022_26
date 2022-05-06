@@ -1,10 +1,10 @@
-10:38:42 **** Incremental Build of configuration Debug for project web_server_central ****
-make -j4 all 
+17:52:39 **** Incremental Build of configuration Debug for project web_server_central ****
+make -j16 all 
 arm-none-eabi-size   web_server_central.elf 
    text	   data	    bss	    dec	    hex	filename
-  38628	    488	   2040	  41156	   a0c4	web_server_central.elf
+  35368	    488	   2072	  37928	   9428	web_server_central.elf
 Finished building: default.size.stdout
  
 
-10:38:43 Build Finished. 0 errors, 0 warnings. (took 411ms)
+17:52:39 Build Finished. 0 errors, 0 warnings. (took 224ms)
 
